@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDMS.Client", "WDMS.Client\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDMS.Utility", "WDMS.Utility\WDMS.Utility.csproj", "{4391B9E5-F6ED-4AC5-A6F0-7AFFDAF35664}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDMS.DAL", "WDMS.DAL\WDMS.DAL.csproj", "{C05A6A6C-5C8C-4F8B-A577-B0707105478E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDMS.Model", "WDMS.Model\WDMS.Model.csproj", "{EC135ABC-36FA-445F-8B2D-DBA0A235984D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4391B9E5-F6ED-4AC5-A6F0-7AFFDAF35664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4391B9E5-F6ED-4AC5-A6F0-7AFFDAF35664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4391B9E5-F6ED-4AC5-A6F0-7AFFDAF35664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C05A6A6C-5C8C-4F8B-A577-B0707105478E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05A6A6C-5C8C-4F8B-A577-B0707105478E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05A6A6C-5C8C-4F8B-A577-B0707105478E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05A6A6C-5C8C-4F8B-A577-B0707105478E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC135ABC-36FA-445F-8B2D-DBA0A235984D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC135ABC-36FA-445F-8B2D-DBA0A235984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC135ABC-36FA-445F-8B2D-DBA0A235984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC135ABC-36FA-445F-8B2D-DBA0A235984D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
