@@ -8,6 +8,6 @@ namespace WDMS.Utility
 {
     public class LogUtil
     {
-
+        //TESTSTSTS START UP
     }
 }
