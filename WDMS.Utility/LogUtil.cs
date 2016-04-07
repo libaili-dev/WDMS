@@ -8,9 +8,6 @@ namespace WDMS.Utility
 {
     public class LogUtil
     {
-        public void Debug(string logMessage)
-        {
-            // TEST AT HOME
-        }
+
     }
 }
