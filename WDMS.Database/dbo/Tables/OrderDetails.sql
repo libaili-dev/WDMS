@@ -8,8 +8,9 @@
     [Price]        DECIMAL (15, 2) NULL,
     [Status]       NVARCHAR (50)   NULL,
     [Operator]     INT             NOT NULL,
-	[CreateTime] Datetime not null,
-	[UpdateTime] datetime null,
-    [Remark]       NVARCHAR (200)  NULL
+	[CreateTime]	DATETIME CONSTRAINT [DF_OrderDetails_CreateTime] DEFAULT (getdate()) NOT NULL,
+	[UpdateTime]	DATETIME null,
+    [Remark]       NVARCHAR (200)  NULL, 
+    CONSTRAINT [PK_OrderDetails] PRIMARY KEY ([OrderDatailId])
 );
 

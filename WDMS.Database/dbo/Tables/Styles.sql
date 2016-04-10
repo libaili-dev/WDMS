@@ -4,6 +4,7 @@
     [Images]      NVARCHAR (1000) NULL,
     [Status]      NVARCHAR (50)   NULL,
     [Description] NVARCHAR (50)   NULL,
-    [CreateTime]  DATETIME        CONSTRAINT [DF_Styles_CreateTime] DEFAULT (getdate()) NULL
+    [CreateTime]  DATETIME        CONSTRAINT [DF_Styles_CreateTime] DEFAULT (getdate()) NULL, 
+    CONSTRAINT [PK_Styles] PRIMARY KEY ([StyleId])
 );
 

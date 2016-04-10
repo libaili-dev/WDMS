@@ -5,6 +5,7 @@
     [Operator]     INT           NOT NULL,
     [Assistant]    INT           NULL,
     [CreateTime]   DATETIME      CONSTRAINT [DF_Orders_CreateTime] DEFAULT (getdate()) NOT NULL,
-    [UpdateTime]   DATETIME      NULL
+    [UpdateTime]   DATETIME      NULL, 
+    CONSTRAINT [PK_Orders] PRIMARY KEY ([OrderBatchId])
 );
 
