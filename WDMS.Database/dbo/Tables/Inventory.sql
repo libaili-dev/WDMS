@@ -9,8 +9,9 @@
     [RentPrice]    DECIMAL (15, 2) NULL,
     [SellPrice]    DECIMAL (15, 2) NULL,
     [Remark]       NVARCHAR (500)  NULL,
-    [CreateTime]   DATETIME        NULL,
-    [UpdateTime]   DATETIME        CONSTRAINT [DF_Inventory_UpdateTime] DEFAULT (getdate()) NULL,
-    [Operator]     INT             NOT NULL
+    [CreateTime]   DATETIME        NULL DEFAULT (getdate()),
+    [UpdateTime]   DATETIME         NULL,
+    [Operator]     INT             NOT NULL, 
+    CONSTRAINT [PK_Inventory] PRIMARY KEY ([InventoryId])
 );
 

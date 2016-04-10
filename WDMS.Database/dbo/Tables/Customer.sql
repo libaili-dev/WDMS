@@ -7,7 +7,8 @@
     [FittingDate]      DATE          NULL,
     [FinalFittingDate] DATE          NULL,
     [WeddingDate]      DATE          NULL,
-    [CreateTime]       DATETIME      NULL,
-    [Operator]         INT           NOT NULL
+    [CreateTime]       DATETIME      NULL DEFAULT (getdate()),
+    [Operator]         INT           NOT NULL, 
+    CONSTRAINT [PK_Customer] PRIMARY KEY ([CustomerId])
 );
 
