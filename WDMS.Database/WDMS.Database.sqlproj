@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{1b74d800-5c57-4368-8a55-9773f92360e0}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -72,5 +72,6 @@
     <Build Include="dbo\Tables\OrderDetails.sql" />
     <Build Include="dbo\Tables\AdminRole.sql" />
     <Build Include="dbo\Tables\Admin.sql" />
+    <Build Include="dbo\Tables\Configurations.sql" />
   </ItemGroup>
 </Project>
