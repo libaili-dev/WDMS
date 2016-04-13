@@ -10,11 +10,36 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300*"></ColumnDefinition>
             <ColumnDefinition Width="300*"></ColumnDefinition>
+            <ColumnDefinition Width="300*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"></RowDefinition>
             <RowDefinition Height="30*"></RowDefinition>
             <RowDefinition Height="30*"></RowDefinition>
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"></ColumnDefinition>
+                    <ColumnDefinition Width="100*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
+                    <RowDefinition Height="15*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">UserName:</Label>
+                <TextBox Grid.Row="0" Grid.Column="1" ></TextBox>
+                <Label Grid.Row="1" Grid.Column="0">Password:</Label>
+                <PasswordBox Grid.Row="1" Grid.Column="1"></PasswordBox>
+                <Button Width="40" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
+                    Reset
+                </Button>
+                <Button Width="40" Grid.Row="3" Grid.Column="1">Login</Button>
+
+                
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
