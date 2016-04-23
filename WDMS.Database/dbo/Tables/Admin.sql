@@ -4,7 +4,7 @@
     [AdminName]   NVARCHAR (50) NOT NULL,
     [Password]    NVARCHAR (50) NULL,
     CONSTRAINT [PK_Admin] PRIMARY KEY CLUSTERED ([AdminId] ASC),
-    CONSTRAINT [FK_Admin_AdminRole] FOREIGN KEY ([AdminRoldId]) REFERENCES [dbo].[AdminRole] ([RoleId])
+    CONSTRAINT [FK_Admin_AdminRole] FOREIGN KEY ([AdminRoldId]) REFERENCES [dbo].[AdminRole] ([RoleId]) 
 );
 
 

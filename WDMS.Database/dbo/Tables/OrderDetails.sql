@@ -13,7 +13,7 @@
     [Remark]        NVARCHAR (200)  NULL,
     CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED ([OrderDatailId] ASC),
     CONSTRAINT [FK_OrderDetails_Inventory] FOREIGN KEY ([InventoryId]) REFERENCES [dbo].[Inventory] ([InventoryId]),
-    CONSTRAINT [FK_OrderDetails_Orders] FOREIGN KEY ([OrderBatchId]) REFERENCES [dbo].[Orders] ([OrderBatchId])
+    CONSTRAINT [FK_OrderDetails_Orders] FOREIGN KEY ([OrderBatchId]) REFERENCES [dbo].[Orders] ([OrderBatchId]) 
 );
 
 
