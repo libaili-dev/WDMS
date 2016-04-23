@@ -7,8 +7,11 @@
     [FittingDate]      DATE          NULL,
     [FinalFittingDate] DATE          NULL,
     [WeddingDate]      DATE          NULL,
-    [CreateTime]       DATETIME      NULL DEFAULT (getdate()),
-    [Operator]         INT           NOT NULL, 
-    CONSTRAINT [PK_Customer] PRIMARY KEY ([CustomerId])
+    [CreateTime]       DATETIME      DEFAULT (getdate()) NULL,
+    [Operator]         INT           NOT NULL,
+    CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED ([CustomerId] ASC),
+    CONSTRAINT [FK_Customer_CustomerType] FOREIGN KEY ([CustomerTypeId]) REFERENCES [dbo].[CustomerType] ([CustomerTypeId])
 );
+
+
 

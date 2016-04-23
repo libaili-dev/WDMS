@@ -9,9 +9,12 @@
     [RentPrice]    DECIMAL (15, 2) NULL,
     [SellPrice]    DECIMAL (15, 2) NULL,
     [Remark]       NVARCHAR (500)  NULL,
-    [CreateTime]   DATETIME        NULL DEFAULT (getdate()),
-    [UpdateTime]   DATETIME         NULL,
-    [Operator]     INT             NOT NULL, 
-    CONSTRAINT [PK_Inventory] PRIMARY KEY ([InventoryId])
+    [CreateTime]   DATETIME        DEFAULT (getdate()) NULL,
+    [UpdateTime]   DATETIME        NULL,
+    [Operator]     INT             NOT NULL,
+    CONSTRAINT [PK_Inventory] PRIMARY KEY CLUSTERED ([InventoryId] ASC),
+    CONSTRAINT [FK_Inventory_Styles] FOREIGN KEY ([StyleId]) REFERENCES [dbo].[Styles] ([StyleId])
 );
+
+
 

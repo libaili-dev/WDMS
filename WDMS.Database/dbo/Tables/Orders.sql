@@ -5,7 +5,10 @@
     [Operator]     INT           NOT NULL,
     [Assistant]    INT           NULL,
     [CreateTime]   DATETIME      CONSTRAINT [DF_Orders_CreateTime] DEFAULT (getdate()) NOT NULL,
-    [UpdateTime]   DATETIME      NULL, 
-    CONSTRAINT [PK_Orders] PRIMARY KEY ([OrderBatchId])
+    [UpdateTime]   DATETIME      NULL,
+    CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED ([OrderBatchId] ASC),
+    CONSTRAINT [FK_Orders_Customer] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[Customer] ([CustomerId])
 );
+
+
 
