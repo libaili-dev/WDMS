@@ -13,7 +13,7 @@
     [UpdateTime]   DATETIME        NULL,
     [Operator]     INT             NOT NULL,
     CONSTRAINT [PK_Inventory] PRIMARY KEY CLUSTERED ([InventoryId] ASC),
-    CONSTRAINT [FK_Inventory_Styles] FOREIGN KEY ([StyleId]) REFERENCES [dbo].[Styles] ([StyleId])
+    CONSTRAINT [FK_Inventory_Styles] FOREIGN KEY ([StyleId]) REFERENCES [dbo].[Styles] ([StyleId]) 
 );
 
 
