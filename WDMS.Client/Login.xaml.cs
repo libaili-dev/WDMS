@@ -22,6 +22,8 @@ namespace WDMS.Client
         public Login()
         {
             InitializeComponent();
+
+            
         }
     }
 }
