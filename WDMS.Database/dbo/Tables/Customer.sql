@@ -7,6 +7,7 @@
     [FittingDate]      DATE          NULL,
     [FinalFittingDate] DATE          NULL,
     [WeddingDate]      DATE          NULL,
+    [Remark]           NVARCHAR (100) NULL,
     [CreateTime]       DATETIME      DEFAULT (getdate()) NULL,
     [Operator]         INT           NOT NULL,
     CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED ([CustomerId] ASC),
