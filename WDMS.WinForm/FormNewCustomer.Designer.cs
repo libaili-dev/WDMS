@@ -244,7 +244,7 @@
             this.txtRemark.Location = new System.Drawing.Point(145, 321);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(343, 158);
+            this.txtRemark.Size = new System.Drawing.Size(526, 158);
             this.txtRemark.TabIndex = 14;
             // 
             // lblMessage
