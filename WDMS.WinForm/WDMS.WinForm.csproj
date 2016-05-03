@@ -61,11 +61,35 @@
     <Compile Include="FormNewCustomer.Designer.cs">
       <DependentUpon>FormNewCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNewInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewInventory.Designer.cs">
+      <DependentUpon>FormNewInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewStyle.Designer.cs">
+      <DependentUpon>FormNewStyle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQueryCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormQueryCustomer.Designer.cs">
       <DependentUpon>FormQueryCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQueryOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueryOrder.Designer.cs">
+      <DependentUpon>FormQueryOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQueryStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueryStyle.Designer.cs">
+      <DependentUpon>FormQueryStyle.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +102,20 @@
     <EmbeddedResource Include="FormNewCustomer.resx">
       <DependentUpon>FormNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewInventory.resx">
+      <DependentUpon>FormNewInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewStyle.resx">
+      <DependentUpon>FormNewStyle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQueryCustomer.resx">
       <DependentUpon>FormQueryCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQueryOrder.resx">
+      <DependentUpon>FormQueryOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQueryStyle.resx">
+      <DependentUpon>FormQueryStyle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

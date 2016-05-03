@@ -46,12 +46,12 @@
             this.sysconfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.lblToDeliveryDesc = new System.Windows.Forms.Label();
             this.tabCtrlToDelivery = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gridToDelivery = new System.Windows.Forms.DataGridView();
+            this.lblToDeliveryDesc = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.gridToDelivery = new System.Windows.Forms.DataGridView();
             this.menuStripMainForm.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tabCtrlToDelivery.SuspendLayout();
@@ -86,7 +86,7 @@
             // summaryToolStripMenuItem
             // 
             this.summaryToolStripMenuItem.Name = "summaryToolStripMenuItem";
-            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.summaryToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.summaryToolStripMenuItem.Text = "总览(&F)";
             // 
             // customerToolStripMenuItem
@@ -147,12 +147,14 @@
             this.newStyleToolStripMenuItem.Name = "newStyleToolStripMenuItem";
             this.newStyleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newStyleToolStripMenuItem.Text = "新建款式";
+            this.newStyleToolStripMenuItem.Click += new System.EventHandler(this.newStyleToolStripMenuItem_Click);
             // 
             // queryStyleToolStripMenuItem
             // 
             this.queryStyleToolStripMenuItem.Name = "queryStyleToolStripMenuItem";
             this.queryStyleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.queryStyleToolStripMenuItem.Text = "款式查询";
+            this.queryStyleToolStripMenuItem.Click += new System.EventHandler(this.queryStyleToolStripMenuItem_Click);
             // 
             // inventoryToolStripMenuItem
             // 
@@ -166,13 +168,13 @@
             // newInventoryToolStripMenuItem
             // 
             this.newInventoryToolStripMenuItem.Name = "newInventoryToolStripMenuItem";
-            this.newInventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newInventoryToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.newInventoryToolStripMenuItem.Text = "新增库存";
             // 
             // queryInventoryToolStripMenuItem
             // 
             this.queryInventoryToolStripMenuItem.Name = "queryInventoryToolStripMenuItem";
-            this.queryInventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.queryInventoryToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.queryInventoryToolStripMenuItem.Text = "库存查询";
             // 
             // sysconfigToolStripMenuItem
@@ -197,15 +199,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(984, 690);
             this.panelMain.TabIndex = 1;
-            // 
-            // lblToDeliveryDesc
-            // 
-            this.lblToDeliveryDesc.AutoSize = true;
-            this.lblToDeliveryDesc.Location = new System.Drawing.Point(6, 14);
-            this.lblToDeliveryDesc.Name = "lblToDeliveryDesc";
-            this.lblToDeliveryDesc.Size = new System.Drawing.Size(71, 12);
-            this.lblToDeliveryDesc.TabIndex = 0;
-            this.lblToDeliveryDesc.Text = "7日内待发件";
             // 
             // tabCtrlToDelivery
             // 
@@ -233,6 +226,27 @@
             this.tabPage1.Text = "待发件";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // gridToDelivery
+            // 
+            this.gridToDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridToDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridToDelivery.Location = new System.Drawing.Point(6, 29);
+            this.gridToDelivery.Name = "gridToDelivery";
+            this.gridToDelivery.RowTemplate.Height = 23;
+            this.gridToDelivery.Size = new System.Drawing.Size(958, 623);
+            this.gridToDelivery.TabIndex = 1;
+            // 
+            // lblToDeliveryDesc
+            // 
+            this.lblToDeliveryDesc.AutoSize = true;
+            this.lblToDeliveryDesc.Location = new System.Drawing.Point(6, 14);
+            this.lblToDeliveryDesc.Name = "lblToDeliveryDesc";
+            this.lblToDeliveryDesc.Size = new System.Drawing.Size(71, 12);
+            this.lblToDeliveryDesc.TabIndex = 0;
+            this.lblToDeliveryDesc.Text = "7日内待发件";
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -252,18 +266,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "待收回";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // gridToDelivery
-            // 
-            this.gridToDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridToDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridToDelivery.Location = new System.Drawing.Point(6, 29);
-            this.gridToDelivery.Name = "gridToDelivery";
-            this.gridToDelivery.RowTemplate.Height = 23;
-            this.gridToDelivery.Size = new System.Drawing.Size(958, 623);
-            this.gridToDelivery.TabIndex = 1;
             // 
             // MainForm
             // 
