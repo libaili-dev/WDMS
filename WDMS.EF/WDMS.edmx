@@ -108,7 +108,7 @@
           <Key>
             <PropertyRef Name="StyleId" />
           </Key>
-          <Property Name="StyleId" Type="int" Nullable="false" />
+          <Property Name="StyleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StyleNo" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Images" Type="nvarchar" MaxLength="1000" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" />
