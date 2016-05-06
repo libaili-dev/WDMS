@@ -16,6 +16,11 @@ namespace WDMS.WinForm
         public FormNewInventory()
         {
             InitializeComponent();
+
+            this.gridInventory.AllowUserToAddRows = false;
+            this.gridInventory.BackgroundColor = Color.White;
+            this.gridInventory.RowHeadersVisible = false;
+            this.gridInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnQueryInventory_Click(object sender, EventArgs e)
