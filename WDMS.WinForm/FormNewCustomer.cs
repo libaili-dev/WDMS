@@ -16,6 +16,7 @@ namespace WDMS.WinForm
         public FormNewCustomer()
         {
             InitializeComponent();
+
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -32,16 +33,31 @@ namespace WDMS.WinForm
             customer.CreateTime = DateTime.Now;
             using (var contxt = new WDMSEntities())
             {
-                contxt.Customer.Add(customer);
-                contxt.SaveChanges();
-                this.lblMessage.Text = string.Format("新增用户：{0}成功！", customer.CustomerName);
+                try
+                {
+                    Customer checkCustomer =contxt.Customer.FirstOrDefault(t => t.Mobile.Equals(customer.Mobile));
+                    if (checkCustomer == null)
+                    {
+                        contxt.Customer.Add(customer);
+                        contxt.SaveChanges();
+                        this.lblMessage.Text = string.Format("新增用户：{0}成功！", customer.CustomerName);
+                        this.txtName.Text = string.Empty;
+                        this.radioSexF.Checked = true;
+                        this.txtMobile.Text = string.Empty;
+                        this.txtRemark.Text = string.Empty;
+                        this.dateTimePickerWeddingDate.Value = DateTime.Today;
+                    }
+                    else
+                    {
+                        this.lblMessage.Text = string.Format("新增用户：{0}失败！该手机用户已经存在", customer.CustomerName);
+                    }
+                }
+                catch (Exception)
+                {
+                    this.lblMessage.Text = string.Format("新增用户：{0}失败！", customer.CustomerName);
+                }
             }
-
-            this.txtName.Text = string.Empty;
-            this.radioSexF.Checked = true;
-            this.txtMobile.Text = string.Empty;
-            this.txtRemark.Text = string.Empty;
-            this.dateTimePickerWeddingDate.Value = DateTime.Today;
+            
         }
 
         private void btnCancelCreate_Click(object sender, EventArgs e)
