@@ -16,6 +16,12 @@ namespace WDMS.WinForm
         public FormQueryCustomer()
         {
             InitializeComponent();
+
+            this.gridCustomers.AllowUserToAddRows = false;
+            this.gridCustomers.BackgroundColor = Color.White;
+            this.gridCustomers.RowHeadersVisible = false;
+            this.gridCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.gridCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnQuery_Click(object sender, EventArgs e)
