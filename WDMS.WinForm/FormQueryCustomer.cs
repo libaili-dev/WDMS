@@ -11,22 +11,22 @@ using WDMS.EF;
 
 namespace WDMS.WinForm
 {
-    public partial class FormQueryAdmin : Form
+    public partial class FormQueryCustomer : Form
     {
-        public FormQueryAdmin()
+        public FormQueryCustomer()
         {
             InitializeComponent();
 
-            this.gridAdmin.AllowUserToAddRows = false;
-            this.gridAdmin.BackgroundColor = Color.White;
-            this.gridAdmin.RowHeadersVisible = false;
-            this.gridAdmin.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.gridAdmin.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridCustomers.AllowUserToAddRows = false;
+            this.gridCustomers.BackgroundColor = Color.White;
+            this.gridCustomers.RowHeadersVisible = false;
+            this.gridCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.gridCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnQuery_Click(object sender, EventArgs e)
         {
-            this.gridAdmin.DataSource = null;
+            this.gridCustomers.DataSource = null;
             this.lblMessage.Text = string.Empty;
             string keyword = this.txtKeyword.Text.Trim();
             if (string.IsNullOrEmpty(keyword))
@@ -39,19 +39,22 @@ namespace WDMS.WinForm
                 using (var contxt = new WDMSEntities())
                 {
                     //var tmp = contxt.Customer.Where<Customer>(tname=> tname.CustomerName.Contains(keyword)).Union<Customer>((tmobile => tmobile.)
-                    var matchingList = (from tmpAdmin in contxt.Admin
-                                       where (tmpAdmin.AdminName.Contains(keyword)
-                                        )                                         
+                    var matchingList = (from tmpCustomer in contxt.Customer
+                                       where (tmpCustomer.CustomerName.Contains(keyword)
+                                         || tmpCustomer.Mobile.Contains(keyword))                                         
                                        select new 
                                        {
-                                           tmpAdmin.AdminId,
-                                           tmpAdmin.AdminName,
-                                           tmpAdmin.AdminRole.RoleName
+                                           tmpCustomer.CustomerId,
+                                           tmpCustomer.CustomerName,
+                                           tmpCustomer.Gender,
+                                           tmpCustomer.Mobile,
+                                           tmpCustomer.WeddingDate,
+                                           tmpCustomer.Remark
                                        }
                                        ).ToList();
                     if (matchingList.Count() > 0)
                     {
-                        this.gridAdmin.DataSource = matchingList;
+                        this.gridCustomers.DataSource = matchingList;
                     }
                     else
                     {
