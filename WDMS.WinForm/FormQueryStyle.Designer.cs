@@ -35,8 +35,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblMessage = new System.Windows.Forms.Label();
             this.btnCreateInvenory = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.btnModifyStyle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.panel2.SuspendLayout();
@@ -46,18 +47,18 @@
             // lblKeyword
             // 
             this.lblKeyword.AutoSize = true;
-            this.lblKeyword.Location = new System.Drawing.Point(12, 13);
+            this.lblKeyword.Location = new System.Drawing.Point(12, 14);
             this.lblKeyword.Name = "lblKeyword";
-            this.lblKeyword.Size = new System.Drawing.Size(89, 12);
+            this.lblKeyword.Size = new System.Drawing.Size(91, 13);
             this.lblKeyword.TabIndex = 0;
             this.lblKeyword.Text = "请输入关键词：";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gridData);
-            this.panel1.Location = new System.Drawing.Point(12, 63);
+            this.panel1.Location = new System.Drawing.Point(12, 68);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(718, 404);
+            this.panel1.Size = new System.Drawing.Size(718, 438);
             this.panel1.TabIndex = 1;
             // 
             // gridData
@@ -67,7 +68,7 @@
             this.gridData.Name = "gridData";
             this.gridData.RowTemplate.Height = 23;
             this.gridData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridData.Size = new System.Drawing.Size(709, 398);
+            this.gridData.Size = new System.Drawing.Size(709, 431);
             this.gridData.TabIndex = 0;
             // 
             // panel2
@@ -75,16 +76,16 @@
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtKeyword);
             this.panel2.Controls.Add(this.lblKeyword);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(12, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(718, 45);
+            this.panel2.Size = new System.Drawing.Size(718, 49);
             this.panel2.TabIndex = 2;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(555, 10);
+            this.btnSearch.Location = new System.Drawing.Point(555, 11);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(75, 25);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "查找(&S)";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -92,19 +93,30 @@
             // 
             // txtKeyword
             // 
-            this.txtKeyword.Location = new System.Drawing.Point(107, 10);
+            this.txtKeyword.Location = new System.Drawing.Point(107, 11);
             this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(317, 21);
+            this.txtKeyword.Size = new System.Drawing.Size(317, 20);
             this.txtKeyword.TabIndex = 1;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnModifyStyle);
             this.panel3.Controls.Add(this.btnCreateInvenory);
             this.panel3.Controls.Add(this.lblMessage);
-            this.panel3.Location = new System.Drawing.Point(12, 473);
+            this.panel3.Location = new System.Drawing.Point(12, 512);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(718, 30);
+            this.panel3.Size = new System.Drawing.Size(718, 33);
             this.panel3.TabIndex = 3;
+            // 
+            // btnCreateInvenory
+            // 
+            this.btnCreateInvenory.Location = new System.Drawing.Point(629, 3);
+            this.btnCreateInvenory.Name = "btnCreateInvenory";
+            this.btnCreateInvenory.Size = new System.Drawing.Size(75, 25);
+            this.btnCreateInvenory.TabIndex = 1;
+            this.btnCreateInvenory.Text = "新增库存";
+            this.btnCreateInvenory.UseVisualStyleBackColor = true;
+            this.btnCreateInvenory.Click += new System.EventHandler(this.btnCreateInvenory_Click);
             // 
             // lblMessage
             // 
@@ -112,24 +124,24 @@
             this.lblMessage.ForeColor = System.Drawing.Color.Fuchsia;
             this.lblMessage.Location = new System.Drawing.Point(4, 4);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 12);
+            this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 0;
             // 
-            // btnCreateInvenory
+            // btnModifyStyle
             // 
-            this.btnCreateInvenory.Location = new System.Drawing.Point(629, 3);
-            this.btnCreateInvenory.Name = "btnCreateInvenory";
-            this.btnCreateInvenory.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateInvenory.TabIndex = 1;
-            this.btnCreateInvenory.Text = "新增库存";
-            this.btnCreateInvenory.UseVisualStyleBackColor = true;
-            this.btnCreateInvenory.Click += new System.EventHandler(this.btnCreateInvenory_Click);
+            this.btnModifyStyle.Location = new System.Drawing.Point(548, 5);
+            this.btnModifyStyle.Name = "btnModifyStyle";
+            this.btnModifyStyle.Size = new System.Drawing.Size(75, 23);
+            this.btnModifyStyle.TabIndex = 2;
+            this.btnModifyStyle.Text = "款式更新";
+            this.btnModifyStyle.UseVisualStyleBackColor = true;
+            this.btnModifyStyle.Click += new System.EventHandler(this.btnModifyStyle_Click);
             // 
             // FormQueryStyle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 515);
+            this.ClientSize = new System.Drawing.Size(742, 558);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.TextBox txtKeyword;
         private System.Windows.Forms.DataGridView gridData;
         private System.Windows.Forms.Button btnCreateInvenory;
+        private System.Windows.Forms.Button btnModifyStyle;
     }
 }

@@ -67,5 +67,16 @@ namespace WDMS.WinForm
                 
             }
         }
+
+        private void btnModifyStyle_Click(object sender, EventArgs e)
+        {
+            if (this.gridData.RowCount > 0)
+            {
+                int selectedStyleId = int.Parse(this.gridData.SelectedRows[0].Cells["StyleId"].Value.ToString());
+                FormNewStyle frm = new FormNewStyle(selectedStyleId);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+            }
+        }
     }
 }
