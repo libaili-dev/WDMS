@@ -21,6 +21,12 @@ namespace WDMS.WinForm
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            string validateMsg = ValidateInputs();
+            if(!string.IsNullOrEmpty(validateMsg))
+            {
+                this.lblMessage.Text = validateMsg;
+                return;
+            }
             this.lblMessage.Text = string.Empty;
             Customer customer = new Customer();
             //set customer type id as 2 tempararily
@@ -58,6 +64,24 @@ namespace WDMS.WinForm
                 }
             }
             
+        }
+
+
+        private string ValidateInputs()
+        {
+            if(string.IsNullOrEmpty(this.txtName.Text.Trim()))
+            {
+                return "客户姓名不能为空！";
+            }
+            if(string.IsNullOrEmpty(this.txtMobile.Text.Trim()))
+            {
+                return "客户联系方式不能为空！";
+            }
+            if (this.dateTimePickerWeddingDate.Value < DateTime.Today)
+            {
+                return "婚期时间有误！";
+            }
+            return string.Empty;
         }
 
         private void btnCancelCreate_Click(object sender, EventArgs e)
