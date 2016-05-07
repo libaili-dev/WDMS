@@ -69,5 +69,12 @@ namespace WDMS.WinForm
                 btnQuery_Click(sender, e);
             }
         }
+
+        private void btnAddAdmin_Click(object sender, EventArgs e)
+        {
+            FormNewAdmin frm = new FormNewAdmin();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
     }
 }
