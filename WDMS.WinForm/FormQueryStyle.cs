@@ -16,6 +16,11 @@ namespace WDMS.WinForm
         public FormQueryStyle()
         {
             InitializeComponent();
+            this.gridData.AllowUserToAddRows = false;
+            this.gridData.BackgroundColor = Color.White;
+            this.gridData.RowHeadersVisible = false;
+            this.gridData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.gridData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -57,7 +62,10 @@ namespace WDMS.WinForm
 
         private void btnCreateInvenory_Click(object sender, EventArgs e)
         {
-
+            if(this.gridData.RowCount>0)
+            {
+                
+            }
         }
     }
 }

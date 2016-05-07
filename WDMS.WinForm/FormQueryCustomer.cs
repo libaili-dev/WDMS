@@ -40,21 +40,22 @@ namespace WDMS.WinForm
                 {
                     //var tmp = contxt.Customer.Where<Customer>(tname=> tname.CustomerName.Contains(keyword)).Union<Customer>((tmobile => tmobile.)
                     var matchingList = (from tmpCustomer in contxt.Customer
-                                       where (tmpCustomer.CustomerName.Contains(keyword)
-                                         || tmpCustomer.Mobile.Contains(keyword))                                         
-                                       select new 
-                                       {
-                                           tmpCustomer.CustomerId,
-                                           tmpCustomer.CustomerName,
-                                           tmpCustomer.Gender,
-                                           tmpCustomer.Mobile,
-                                           tmpCustomer.WeddingDate,
-                                           tmpCustomer.Remark
-                                       }
+                                        where (tmpCustomer.CustomerName.Contains(keyword)
+                                          || tmpCustomer.Mobile.Contains(keyword))
+                                        select new
+                                        {
+                                            tmpCustomer.CustomerId,
+                                            tmpCustomer.CustomerName,
+                                            tmpCustomer.Gender,
+                                            tmpCustomer.Mobile,
+                                            tmpCustomer.WeddingDate,
+                                            tmpCustomer.Remark
+                                        }
                                        ).ToList();
                     if (matchingList.Count() > 0)
                     {
                         this.gridCustomers.DataSource = matchingList;
+                        this.gridCustomers.Rows[0].Selected = true;
                     }
                     else
                     {
@@ -70,6 +71,30 @@ namespace WDMS.WinForm
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnQuery_Click(sender, e);
+            }
+        }
+
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+            if (this.gridCustomers.RowCount > 0)
+            {
+                if (this.gridCustomers.SelectedRows.Count > 0)
+                {
+                    int customerId = int.Parse(this.gridCustomers.SelectedRows[0].Cells["CustomerId"].Value.ToString());
+
+                    //TODO
+                    MessageBox.Show(this.gridCustomers.SelectedRows[0].Cells["CustomerName"].Value.ToString());
+                }
+            }
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            if (this.gridCustomers.RowCount > 0)
+            {
+                int customerId = int.Parse(this.gridCustomers.SelectedRows[0].Cells["CustomerId"].Value.ToString());
+                FormNewCustomer frmEditCustomer = new FormNewCustomer(customerId);
+                frmEditCustomer.ShowDialog();
             }
         }
     }
