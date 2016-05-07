@@ -63,7 +63,6 @@ namespace WDMS.WinForm
             customer.Mobile = this.txtMobile.Text.Trim();
             customer.WeddingDate = this.dateTimePickerWeddingDate.Value;
             customer.Remark = this.txtRemark.Text.Trim();
-            customer.CreateTime = DateTime.Now;
             return customer;
         }
 
@@ -77,6 +76,7 @@ namespace WDMS.WinForm
             }
             this.lblMessage.Text = string.Empty;
             Customer customer = GetCustomerModelFromGUI();
+            customer.CreateTime = DateTime.Now;
 
             using (var contxt = new WDMSEntities())
             {

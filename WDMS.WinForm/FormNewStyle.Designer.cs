@@ -40,6 +40,7 @@
             this.btnCreateStyle = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.btnEditStyle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -114,19 +115,21 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.btnEditStyle);
             this.panel4.Controls.Add(this.btnCancel);
             this.panel4.Controls.Add(this.btnCreateStyle);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(392, 0);
+            this.panel4.Location = new System.Drawing.Point(377, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(245, 36);
+            this.panel4.Size = new System.Drawing.Size(260, 36);
             this.panel4.TabIndex = 1;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(147, 5);
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Location = new System.Drawing.Point(179, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 25);
+            this.btnCancel.Size = new System.Drawing.Size(69, 25);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -134,9 +137,10 @@
             // 
             // btnCreateStyle
             // 
-            this.btnCreateStyle.Location = new System.Drawing.Point(34, 5);
+            this.btnCreateStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateStyle.Location = new System.Drawing.Point(103, 5);
             this.btnCreateStyle.Name = "btnCreateStyle";
-            this.btnCreateStyle.Size = new System.Drawing.Size(75, 25);
+            this.btnCreateStyle.Size = new System.Drawing.Size(70, 25);
             this.btnCreateStyle.TabIndex = 0;
             this.btnCreateStyle.Text = "确定";
             this.btnCreateStyle.UseVisualStyleBackColor = true;
@@ -159,6 +163,17 @@
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 0;
+            // 
+            // btnEditStyle
+            // 
+            this.btnEditStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditStyle.Location = new System.Drawing.Point(28, 6);
+            this.btnEditStyle.Name = "btnEditStyle";
+            this.btnEditStyle.Size = new System.Drawing.Size(69, 23);
+            this.btnEditStyle.TabIndex = 2;
+            this.btnEditStyle.Text = "更新";
+            this.btnEditStyle.UseVisualStyleBackColor = true;
+            this.btnEditStyle.Click += new System.EventHandler(this.btnEditStyle_Click);
             // 
             // FormNewStyle
             // 
@@ -193,5 +208,6 @@
         private System.Windows.Forms.TextBox txtStyleNo;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Button btnEditStyle;
     }
 }
