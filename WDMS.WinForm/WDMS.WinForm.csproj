@@ -73,6 +73,12 @@
     <Compile Include="FormNewStyle.Designer.cs">
       <DependentUpon>FormNewStyle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQueryAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueryAdmin.Designer.cs">
+      <DependentUpon>FormQueryAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQueryCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewStyle.resx">
       <DependentUpon>FormNewStyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQueryAdmin.resx">
+      <DependentUpon>FormQueryAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQueryCustomer.resx">
       <DependentUpon>FormQueryCustomer.cs</DependentUpon>

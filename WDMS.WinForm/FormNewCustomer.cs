@@ -49,7 +49,7 @@ namespace WDMS.WinForm
                     }
                     else
                     {
-                        this.lblMessage.Text = string.Format("新增用户：{0}失败！该手机用户已经存在", customer.CustomerName);
+                        this.lblMessage.Text = string.Format("新增用户：{0}失败！该手机用户已经存在！", customer.CustomerName);
                     }
                 }
                 catch (Exception)

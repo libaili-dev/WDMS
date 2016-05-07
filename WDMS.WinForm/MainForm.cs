@@ -44,5 +44,12 @@ namespace WDMS.WinForm
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
+
+        private void adminConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQueryAdmin frm = new FormQueryAdmin();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
     }
 }
