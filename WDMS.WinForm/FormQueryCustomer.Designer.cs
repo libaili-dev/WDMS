@@ -35,33 +35,37 @@
             this.panelMessage = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnViewOrders = new System.Windows.Forms.Button();
+            this.btnEditCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             this.panelMessage.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInputCustomerInfo
             // 
             this.lblInputCustomerInfo.AutoSize = true;
-            this.lblInputCustomerInfo.Location = new System.Drawing.Point(26, 13);
+            this.lblInputCustomerInfo.Location = new System.Drawing.Point(26, 14);
             this.lblInputCustomerInfo.Name = "lblInputCustomerInfo";
-            this.lblInputCustomerInfo.Size = new System.Drawing.Size(125, 12);
+            this.lblInputCustomerInfo.Size = new System.Drawing.Size(127, 13);
             this.lblInputCustomerInfo.TabIndex = 0;
             this.lblInputCustomerInfo.Text = "客户姓名或联系方式：";
             // 
             // txtKeyword
             // 
-            this.txtKeyword.Location = new System.Drawing.Point(157, 10);
+            this.txtKeyword.Location = new System.Drawing.Point(157, 11);
             this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(354, 21);
+            this.txtKeyword.Size = new System.Drawing.Size(354, 20);
             this.txtKeyword.TabIndex = 1;
             this.txtKeyword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyword_KeyPress);
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(548, 8);
+            this.btnQuery.Location = new System.Drawing.Point(548, 9);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery.Size = new System.Drawing.Size(75, 25);
             this.btnQuery.TabIndex = 2;
             this.btnQuery.Text = "查找(&S)";
             this.btnQuery.UseVisualStyleBackColor = true;
@@ -69,25 +73,24 @@
             // 
             // gridCustomers
             // 
-            this.gridCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gridCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCustomers.Location = new System.Drawing.Point(12, 54);
+            this.gridCustomers.Location = new System.Drawing.Point(12, 59);
             this.gridCustomers.Name = "gridCustomers";
             this.gridCustomers.RowTemplate.Height = 23;
-            this.gridCustomers.Size = new System.Drawing.Size(731, 437);
+            this.gridCustomers.Size = new System.Drawing.Size(731, 473);
             this.gridCustomers.TabIndex = 3;
             // 
             // panelMessage
             // 
-            this.panelMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMessage.Controls.Add(this.panel2);
             this.panelMessage.Controls.Add(this.panel1);
-            this.panelMessage.Location = new System.Drawing.Point(12, 493);
+            this.panelMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMessage.Location = new System.Drawing.Point(0, 538);
             this.panelMessage.Name = "panelMessage";
-            this.panelMessage.Size = new System.Drawing.Size(731, 44);
+            this.panelMessage.Size = new System.Drawing.Size(755, 44);
             this.panelMessage.TabIndex = 4;
             // 
             // panel1
@@ -103,16 +106,51 @@
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.ForeColor = System.Drawing.Color.Fuchsia;
-            this.lblMessage.Location = new System.Drawing.Point(4, 20);
+            this.lblMessage.Location = new System.Drawing.Point(4, 22);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 12);
+            this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnEditCustomer);
+            this.panel2.Controls.Add(this.btnViewOrders);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(410, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(345, 38);
+            this.panel2.TabIndex = 5;
+            // 
+            // btnViewOrders
+            // 
+            this.btnViewOrders.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViewOrders.Location = new System.Drawing.Point(216, 6);
+            this.btnViewOrders.Name = "btnViewOrders";
+            this.btnViewOrders.Size = new System.Drawing.Size(108, 23);
+            this.btnViewOrders.TabIndex = 0;
+            this.btnViewOrders.Text = "创建或查看订单";
+            this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
+            // 
+            // btnEditCustomer
+            // 
+            this.btnEditCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditCustomer.Location = new System.Drawing.Point(124, 6);
+            this.btnEditCustomer.Name = "btnEditCustomer";
+            this.btnEditCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btnEditCustomer.TabIndex = 1;
+            this.btnEditCustomer.Text = "修改";
+            this.btnEditCustomer.UseVisualStyleBackColor = true;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // FormQueryCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 537);
+            this.ClientSize = new System.Drawing.Size(755, 582);
             this.Controls.Add(this.panelMessage);
             this.Controls.Add(this.gridCustomers);
             this.Controls.Add(this.btnQuery);
@@ -124,6 +162,7 @@
             this.panelMessage.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +177,8 @@
         private System.Windows.Forms.Panel panelMessage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnViewOrders;
+        private System.Windows.Forms.Button btnEditCustomer;
     }
 }
