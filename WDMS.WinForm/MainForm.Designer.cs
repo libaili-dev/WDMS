@@ -125,8 +125,9 @@
             // newOrderToolStripMenuItem
             // 
             this.newOrderToolStripMenuItem.Name = "newOrderToolStripMenuItem";
-            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newOrderToolStripMenuItem.Text = "新建订单";
+            this.newOrderToolStripMenuItem.Click += new System.EventHandler(this.newOrderToolStripMenuItem_Click);
             // 
             // queryOrderToolStripMenuItem
             // 
@@ -178,6 +179,7 @@
             this.queryInventoryToolStripMenuItem.Name = "queryInventoryToolStripMenuItem";
             this.queryInventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.queryInventoryToolStripMenuItem.Text = "库存查询";
+            this.queryInventoryToolStripMenuItem.Click += new System.EventHandler(this.queryInventoryToolStripMenuItem_Click);
             // 
             // sysconfigToolStripMenuItem
             // 
