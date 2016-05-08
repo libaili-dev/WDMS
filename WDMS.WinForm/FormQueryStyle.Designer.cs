@@ -35,9 +35,9 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnModifyStyle = new System.Windows.Forms.Button();
             this.btnCreateInvenory = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.btnModifyStyle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
             this.panel2.SuspendLayout();
@@ -108,6 +108,16 @@
             this.panel3.Size = new System.Drawing.Size(718, 33);
             this.panel3.TabIndex = 3;
             // 
+            // btnModifyStyle
+            // 
+            this.btnModifyStyle.Location = new System.Drawing.Point(548, 5);
+            this.btnModifyStyle.Name = "btnModifyStyle";
+            this.btnModifyStyle.Size = new System.Drawing.Size(75, 23);
+            this.btnModifyStyle.TabIndex = 2;
+            this.btnModifyStyle.Text = "款式修改";
+            this.btnModifyStyle.UseVisualStyleBackColor = true;
+            this.btnModifyStyle.Click += new System.EventHandler(this.btnModifyStyle_Click);
+            // 
             // btnCreateInvenory
             // 
             this.btnCreateInvenory.Location = new System.Drawing.Point(629, 3);
@@ -126,16 +136,6 @@
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 0;
-            // 
-            // btnModifyStyle
-            // 
-            this.btnModifyStyle.Location = new System.Drawing.Point(548, 5);
-            this.btnModifyStyle.Name = "btnModifyStyle";
-            this.btnModifyStyle.Size = new System.Drawing.Size(75, 23);
-            this.btnModifyStyle.TabIndex = 2;
-            this.btnModifyStyle.Text = "款式更新";
-            this.btnModifyStyle.UseVisualStyleBackColor = true;
-            this.btnModifyStyle.Click += new System.EventHandler(this.btnModifyStyle_Click);
             // 
             // FormQueryStyle
             // 

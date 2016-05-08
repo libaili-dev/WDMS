@@ -44,6 +44,7 @@
             this.newInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queryInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sysconfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabCtrlToDelivery = new System.Windows.Forms.TabControl();
@@ -52,7 +53,6 @@
             this.lblToDeliveryDesc = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.adminConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainForm.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tabCtrlToDelivery.SuspendLayout();
@@ -72,7 +72,7 @@
             this.aboutToolStripMenuItem});
             this.menuStripMainForm.Location = new System.Drawing.Point(0, 0);
             this.menuStripMainForm.Name = "menuStripMainForm";
-            this.menuStripMainForm.Size = new System.Drawing.Size(1008, 24);
+            this.menuStripMainForm.Size = new System.Drawing.Size(826, 24);
             this.menuStripMainForm.TabIndex = 0;
             this.menuStripMainForm.Text = "menuStrip1";
             // 
@@ -102,14 +102,14 @@
             // newCustomerSearchToolStripMenuItem
             // 
             this.newCustomerSearchToolStripMenuItem.Name = "newCustomerSearchToolStripMenuItem";
-            this.newCustomerSearchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newCustomerSearchToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.newCustomerSearchToolStripMenuItem.Text = "新增客户";
             this.newCustomerSearchToolStripMenuItem.Click += new System.EventHandler(this.newCustomerSearchToolStripMenuItem_Click);
             // 
             // queryCustomerToolStripMenuItem
             // 
             this.queryCustomerToolStripMenuItem.Name = "queryCustomerToolStripMenuItem";
-            this.queryCustomerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.queryCustomerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.queryCustomerToolStripMenuItem.Text = "客户查询";
             this.queryCustomerToolStripMenuItem.Click += new System.EventHandler(this.queryCustomerToolStripMenuItem_Click);
             // 
@@ -125,13 +125,13 @@
             // newOrderToolStripMenuItem
             // 
             this.newOrderToolStripMenuItem.Name = "newOrderToolStripMenuItem";
-            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.newOrderToolStripMenuItem.Text = "新建订单";
             // 
             // queryOrderToolStripMenuItem
             // 
             this.queryOrderToolStripMenuItem.Name = "queryOrderToolStripMenuItem";
-            this.queryOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.queryOrderToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.queryOrderToolStripMenuItem.Text = "订单查询";
             // 
             // styleToolStripMenuItem
@@ -171,6 +171,7 @@
             this.newInventoryToolStripMenuItem.Name = "newInventoryToolStripMenuItem";
             this.newInventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newInventoryToolStripMenuItem.Text = "新增库存";
+            this.newInventoryToolStripMenuItem.Click += new System.EventHandler(this.newInventoryToolStripMenuItem_Click);
             // 
             // queryInventoryToolStripMenuItem
             // 
@@ -186,6 +187,13 @@
             this.sysconfigToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.sysconfigToolStripMenuItem.Text = "配置(&G)";
             // 
+            // adminConfigToolStripMenuItem
+            // 
+            this.adminConfigToolStripMenuItem.Name = "adminConfigToolStripMenuItem";
+            this.adminConfigToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.adminConfigToolStripMenuItem.Text = "管理员";
+            this.adminConfigToolStripMenuItem.Click += new System.EventHandler(this.adminConfigToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -200,7 +208,7 @@
             this.panelMain.Controls.Add(this.tabCtrlToDelivery);
             this.panelMain.Location = new System.Drawing.Point(12, 30);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(984, 748);
+            this.panelMain.Size = new System.Drawing.Size(802, 475);
             this.panelMain.TabIndex = 1;
             // 
             // tabCtrlToDelivery
@@ -214,7 +222,7 @@
             this.tabCtrlToDelivery.Location = new System.Drawing.Point(3, 3);
             this.tabCtrlToDelivery.Name = "tabCtrlToDelivery";
             this.tabCtrlToDelivery.SelectedIndex = 0;
-            this.tabCtrlToDelivery.Size = new System.Drawing.Size(978, 741);
+            this.tabCtrlToDelivery.Size = new System.Drawing.Size(796, 468);
             this.tabCtrlToDelivery.TabIndex = 1;
             // 
             // tabPage1
@@ -224,7 +232,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(970, 715);
+            this.tabPage1.Size = new System.Drawing.Size(788, 442);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "待发件";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -238,7 +246,7 @@
             this.gridToDelivery.Location = new System.Drawing.Point(6, 31);
             this.gridToDelivery.Name = "gridToDelivery";
             this.gridToDelivery.RowTemplate.Height = 23;
-            this.gridToDelivery.Size = new System.Drawing.Size(958, 675);
+            this.gridToDelivery.Size = new System.Drawing.Size(776, 402);
             this.gridToDelivery.TabIndex = 1;
             // 
             // lblToDeliveryDesc
@@ -270,18 +278,11 @@
             this.tabPage3.Text = "待收回";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // adminConfigToolStripMenuItem
-            // 
-            this.adminConfigToolStripMenuItem.Name = "adminConfigToolStripMenuItem";
-            this.adminConfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.adminConfigToolStripMenuItem.Text = "管理员";
-            this.adminConfigToolStripMenuItem.Click += new System.EventHandler(this.adminConfigToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 741);
+            this.ClientSize = new System.Drawing.Size(826, 468);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStripMainForm);
             this.MainMenuStrip = this.menuStripMainForm;

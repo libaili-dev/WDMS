@@ -28,219 +28,249 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblRemark = new System.Windows.Forms.Label();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.txtTotalCount = new System.Windows.Forms.TextBox();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.txtSize = new System.Windows.Forms.TextBox();
+            this.lblSize = new System.Windows.Forms.Label();
+            this.lblStyleNoLabel = new System.Windows.Forms.Label();
+            this.lblStyleNo = new System.Windows.Forms.Label();
+            this.lblRentPrice = new System.Windows.Forms.Label();
+            this.txtRentPrice = new System.Windows.Forms.TextBox();
+            this.lblSellPrice = new System.Windows.Forms.Label();
+            this.txtSellPrice = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.btnCreateNewInventory = new System.Windows.Forms.Button();
-            this.lblStyleNo = new System.Windows.Forms.Label();
-            this.txtStyleNo = new System.Windows.Forms.TextBox();
-            this.btnQueryInventory = new System.Windows.Forms.Button();
-            this.gridInventory = new System.Windows.Forms.DataGridView();
-            this.lblSize = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.txtTotalCount = new System.Windows.Forms.TextBox();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.lblRemark = new System.Windows.Forms.Label();
+            this.btnUpdateInventory = new System.Windows.Forms.Button();
+            this.btnAddInventory = new System.Windows.Forms.Button();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnQueryInventory);
-            this.panel1.Controls.Add(this.txtStyleNo);
-            this.panel1.Controls.Add(this.lblStyleNo);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 538);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.gridInventory);
-            this.panel2.Location = new System.Drawing.Point(3, 47);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(902, 161);
-            this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.lblSellPrice);
+            this.panel3.Controls.Add(this.lblRentPrice);
+            this.panel3.Controls.Add(this.lblStyleNo);
+            this.panel3.Controls.Add(this.lblStyleNoLabel);
             this.panel3.Controls.Add(this.lblRemark);
             this.panel3.Controls.Add(this.txtRemark);
             this.panel3.Controls.Add(this.txtTotalCount);
             this.panel3.Controls.Add(this.lblCount);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtSellPrice);
+            this.panel3.Controls.Add(this.txtRentPrice);
+            this.panel3.Controls.Add(this.txtSize);
             this.panel3.Controls.Add(this.lblSize);
-            this.panel3.Location = new System.Drawing.Point(3, 214);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(902, 263);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnCreateNewInventory);
-            this.panel4.Controls.Add(this.lblMessage);
-            this.panel4.Location = new System.Drawing.Point(3, 483);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(902, 52);
-            this.panel4.TabIndex = 2;
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.ForeColor = System.Drawing.Color.Fuchsia;
-            this.lblMessage.Location = new System.Drawing.Point(9, 25);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 12);
-            this.lblMessage.TabIndex = 0;
-            // 
-            // btnCreateNewInventory
-            // 
-            this.btnCreateNewInventory.Location = new System.Drawing.Point(743, 13);
-            this.btnCreateNewInventory.Name = "btnCreateNewInventory";
-            this.btnCreateNewInventory.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateNewInventory.TabIndex = 1;
-            this.btnCreateNewInventory.Text = "添加库存(&S)";
-            this.btnCreateNewInventory.UseVisualStyleBackColor = true;
-            this.btnCreateNewInventory.Click += new System.EventHandler(this.btnCreateNewInventory_Click);
-            // 
-            // lblStyleNo
-            // 
-            this.lblStyleNo.AutoSize = true;
-            this.lblStyleNo.Location = new System.Drawing.Point(4, 18);
-            this.lblStyleNo.Name = "lblStyleNo";
-            this.lblStyleNo.Size = new System.Drawing.Size(65, 12);
-            this.lblStyleNo.TabIndex = 3;
-            this.lblStyleNo.Text = "款式编号：";
-            // 
-            // txtStyleNo
-            // 
-            this.txtStyleNo.Location = new System.Drawing.Point(74, 15);
-            this.txtStyleNo.Name = "txtStyleNo";
-            this.txtStyleNo.Size = new System.Drawing.Size(317, 21);
-            this.txtStyleNo.TabIndex = 4;
-            // 
-            // btnQueryInventory
-            // 
-            this.btnQueryInventory.Location = new System.Drawing.Point(421, 13);
-            this.btnQueryInventory.Name = "btnQueryInventory";
-            this.btnQueryInventory.Size = new System.Drawing.Size(128, 23);
-            this.btnQueryInventory.TabIndex = 5;
-            this.btnQueryInventory.Text = "查询现有库存";
-            this.btnQueryInventory.UseVisualStyleBackColor = true;
-            this.btnQueryInventory.Click += new System.EventHandler(this.btnQueryInventory_Click);
-            // 
-            // gridInventory
-            // 
-            this.gridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInventory.Location = new System.Drawing.Point(3, 3);
-            this.gridInventory.Name = "gridInventory";
-            this.gridInventory.RowTemplate.Height = 23;
-            this.gridInventory.Size = new System.Drawing.Size(896, 150);
-            this.gridInventory.TabIndex = 0;
-            // 
-            // lblSize
-            // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(11, 14);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(65, 12);
-            this.lblSize.TabIndex = 0;
-            this.lblSize.Text = "尺码大小：";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(82, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 1;
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(237, 14);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(41, 12);
-            this.lblCount.TabIndex = 2;
-            this.lblCount.Text = "总数：";
-            // 
-            // txtTotalCount
-            // 
-            this.txtTotalCount.Location = new System.Drawing.Point(284, 9);
-            this.txtTotalCount.Name = "txtTotalCount";
-            this.txtTotalCount.Size = new System.Drawing.Size(100, 21);
-            this.txtTotalCount.TabIndex = 3;
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(82, 60);
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(302, 154);
-            this.txtRemark.TabIndex = 4;
+            this.panel3.Size = new System.Drawing.Size(438, 261);
+            this.panel3.TabIndex = 2;
             // 
             // lblRemark
             // 
             this.lblRemark.AutoSize = true;
-            this.lblRemark.Location = new System.Drawing.Point(13, 60);
+            this.lblRemark.Location = new System.Drawing.Point(14, 130);
             this.lblRemark.Name = "lblRemark";
-            this.lblRemark.Size = new System.Drawing.Size(41, 12);
+            this.lblRemark.Size = new System.Drawing.Size(43, 13);
             this.lblRemark.TabIndex = 5;
             this.lblRemark.Text = "备注：";
             // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(83, 130);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(302, 96);
+            this.txtRemark.TabIndex = 4;
+            // 
+            // txtTotalCount
+            // 
+            this.txtTotalCount.Location = new System.Drawing.Point(287, 47);
+            this.txtTotalCount.Name = "txtTotalCount";
+            this.txtTotalCount.Size = new System.Drawing.Size(61, 20);
+            this.txtTotalCount.TabIndex = 3;
+            this.txtTotalCount.Text = "1";
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(238, 50);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(43, 13);
+            this.lblCount.TabIndex = 2;
+            this.lblCount.Text = "数量：";
+            // 
+            // txtSize
+            // 
+            this.txtSize.Location = new System.Drawing.Point(83, 47);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(100, 20);
+            this.txtSize.TabIndex = 1;
+            // 
+            // lblSize
+            // 
+            this.lblSize.AutoSize = true;
+            this.lblSize.Location = new System.Drawing.Point(12, 50);
+            this.lblSize.Name = "lblSize";
+            this.lblSize.Size = new System.Drawing.Size(67, 13);
+            this.lblSize.TabIndex = 0;
+            this.lblSize.Text = "尺码大小：";
+            // 
+            // lblStyleNoLabel
+            // 
+            this.lblStyleNoLabel.AutoSize = true;
+            this.lblStyleNoLabel.Location = new System.Drawing.Point(13, 13);
+            this.lblStyleNoLabel.Name = "lblStyleNoLabel";
+            this.lblStyleNoLabel.Size = new System.Drawing.Size(67, 13);
+            this.lblStyleNoLabel.TabIndex = 6;
+            this.lblStyleNoLabel.Text = "款式编号：";
+            // 
+            // lblStyleNo
+            // 
+            this.lblStyleNo.AutoSize = true;
+            this.lblStyleNo.Location = new System.Drawing.Point(82, 13);
+            this.lblStyleNo.Name = "lblStyleNo";
+            this.lblStyleNo.Size = new System.Drawing.Size(0, 13);
+            this.lblStyleNo.TabIndex = 7;
+            // 
+            // lblRentPrice
+            // 
+            this.lblRentPrice.AutoSize = true;
+            this.lblRentPrice.Location = new System.Drawing.Point(12, 88);
+            this.lblRentPrice.Name = "lblRentPrice";
+            this.lblRentPrice.Size = new System.Drawing.Size(67, 13);
+            this.lblRentPrice.TabIndex = 8;
+            this.lblRentPrice.Text = "租赁价格：";
+            // 
+            // txtRentPrice
+            // 
+            this.txtRentPrice.Location = new System.Drawing.Point(83, 85);
+            this.txtRentPrice.Name = "txtRentPrice";
+            this.txtRentPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtRentPrice.TabIndex = 1;
+            // 
+            // lblSellPrice
+            // 
+            this.lblSellPrice.AutoSize = true;
+            this.lblSellPrice.Location = new System.Drawing.Point(214, 88);
+            this.lblSellPrice.Name = "lblSellPrice";
+            this.lblSellPrice.Size = new System.Drawing.Size(67, 13);
+            this.lblSellPrice.TabIndex = 9;
+            this.lblSellPrice.Text = "出售价格：";
+            // 
+            // txtSellPrice
+            // 
+            this.txtSellPrice.Location = new System.Drawing.Point(287, 85);
+            this.txtSellPrice.Name = "txtSellPrice";
+            this.txtSellPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtSellPrice.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 266);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(438, 44);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblMessage);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 44);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnAddInventory);
+            this.panel4.Controls.Add(this.btnUpdateInventory);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(171, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(267, 44);
+            this.panel4.TabIndex = 1;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblMessage.Location = new System.Drawing.Point(8, 18);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblMessage.TabIndex = 0;
+            // 
+            // btnUpdateInventory
+            // 
+            this.btnUpdateInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateInventory.Location = new System.Drawing.Point(88, 13);
+            this.btnUpdateInventory.Name = "btnUpdateInventory";
+            this.btnUpdateInventory.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateInventory.TabIndex = 0;
+            this.btnUpdateInventory.Text = "更新";
+            this.btnUpdateInventory.UseVisualStyleBackColor = true;
+            this.btnUpdateInventory.Click += new System.EventHandler(this.btnUpdateInventory_Click);
+            // 
+            // btnAddInventory
+            // 
+            this.btnAddInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddInventory.Location = new System.Drawing.Point(180, 13);
+            this.btnAddInventory.Name = "btnAddInventory";
+            this.btnAddInventory.Size = new System.Drawing.Size(75, 23);
+            this.btnAddInventory.TabIndex = 1;
+            this.btnAddInventory.Text = "添加";
+            this.btnAddInventory.UseVisualStyleBackColor = true;
+            this.btnAddInventory.Click += new System.EventHandler(this.btnAddInventory_Click);
+            // 
             // FormNewInventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 538);
+            this.ClientSize = new System.Drawing.Size(438, 310);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Name = "FormNewInventory";
-            this.Text = "创建库存";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.Text = "库存";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.Button btnCreateNewInventory;
         private System.Windows.Forms.Label lblStyleNo;
-        private System.Windows.Forms.TextBox txtStyleNo;
-        private System.Windows.Forms.Button btnQueryInventory;
-        private System.Windows.Forms.DataGridView gridInventory;
-        private System.Windows.Forms.TextBox txtTotalCount;
-        private System.Windows.Forms.Label lblCount;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblSize;
+        private System.Windows.Forms.Label lblStyleNoLabel;
         private System.Windows.Forms.Label lblRemark;
         private System.Windows.Forms.TextBox txtRemark;
+        private System.Windows.Forms.TextBox txtTotalCount;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.TextBox txtSize;
+        private System.Windows.Forms.Label lblSize;
+        private System.Windows.Forms.Label lblSellPrice;
+        private System.Windows.Forms.Label lblRentPrice;
+        private System.Windows.Forms.TextBox txtSellPrice;
+        private System.Windows.Forms.TextBox txtRentPrice;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnAddInventory;
+        private System.Windows.Forms.Button btnUpdateInventory;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
