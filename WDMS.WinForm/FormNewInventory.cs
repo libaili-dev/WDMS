@@ -15,12 +15,14 @@ namespace WDMS.WinForm
     {
         private string _styleNo = string.Empty;
         private int _styleId = 0;
+        private int _inventoryId = 0;
 
         public FormNewInventory(string styleNo)
         {
-            
-            InitializeComponent();
 
+            InitializeComponent();
+            this.btnAddInventory.Visible = true;
+            this.btnUpdateInventory.Visible = false;
             this.txtTotalCount.Text = "1";
             _styleNo = styleNo;
             this.lblStyleNo.Text = styleNo;
@@ -31,14 +33,81 @@ namespace WDMS.WinForm
             }
         }
 
+        /// <summary>
+        /// Update Inventory
+        /// </summary>
+        /// <param name="styleNo"></param>
+        /// <param name="inventoryId"></param>
+        public FormNewInventory(string styleNo, int inventoryId)
+        {
+            InitializeComponent();
+
+            this.btnAddInventory.Visible = false;
+            this.btnUpdateInventory.Visible = true;
+
+            this.txtTotalCount.Text = "1";
+            _styleNo = styleNo;
+            _inventoryId = inventoryId;
+
+            this.lblStyleNo.Text = styleNo;
+            
+
+            using (var context = new WDMSEntities())
+            {
+                var inventory = context.Inventory.Find(inventoryId);
+                if (inventory != null)
+                {
+                    this.txtSize.Text = inventory.Size;
+                    this.txtTotalCount.Text = inventory.TotalCount.ToString();
+                    this.txtSellPrice.Text = inventory.SellPrice.ToString();
+                    this.txtRentPrice.Text = inventory.RentPrice.ToString();
+                    this.txtRemark.Text = inventory.Remark.ToString();
+                }
+            }
+        }
+
+        public void SetUpdateOperation()
+        {
+            this.btnAddInventory.Visible = false;
+            this.btnUpdateInventory.Visible = true;
+            using (var context = new WDMSEntities())
+            {
+                // var tmpInv = context.Inventory.
+            }
+
+        }
 
         private void BindInventoryInfo()
         {
-            
+
         }
 
         private void btnUpdateInventory_Click(object sender, EventArgs e)
         {
+            this.lblMessage.Text = string.Empty;
+            string validateMsg = ValidateInputs();
+            if (!string.IsNullOrEmpty(validateMsg))
+            {
+                this.lblMessage.Text = validateMsg;
+            }
+            else
+            {
+                Inventory inv = GetInventoryFromGUI();
+
+                using (var context = new WDMSEntities())
+                {
+                    var dbInv = context.Inventory.Find(_inventoryId);
+                    dbInv.Size = inv.Size;
+                    dbInv.TotalCount = inv.TotalCount;
+                    dbInv.SellPrice = inv.SellPrice;
+                    dbInv.RentPrice = inv.RentPrice;
+                    dbInv.Remark = inv.Remark;
+                    dbInv.UpdateTime = DateTime.Now;
+
+                    context.SaveChanges();
+                    this.lblMessage.Text = "库存信息更新成功！";
+                }
+            }
 
         }
 
@@ -52,17 +121,10 @@ namespace WDMS.WinForm
             }
             else
             {
-                Inventory inventory = new Inventory();
-                inventory.Size = this.txtSize.Text.Trim();
-                inventory.TotalCount = int.Parse( this.txtTotalCount.Text.Trim());
-                inventory.RentPrice =decimal.Parse( this.txtRentPrice.Text.Trim());
-                inventory.SellPrice = decimal.Parse(this.txtSellPrice.Text.Trim());
-                inventory.Remark = this.txtRemark.Text.Trim();
-                inventory.StyleId = _styleId;
-                inventory.Status = "Normal";
+                Inventory inventory = GetInventoryFromGUI();
+
                 inventory.CreateTime = DateTime.Now;
 
-                inventory.Operator = 1;
 
                 using (var context = new WDMSEntities())
                 {
@@ -78,6 +140,20 @@ namespace WDMS.WinForm
                     this.txtRemark.Text = string.Empty;
                 }
             }
+        }
+
+        private Inventory GetInventoryFromGUI()
+        {
+            Inventory inventory = new Inventory();
+            inventory.Size = this.txtSize.Text.Trim();
+            inventory.TotalCount = int.Parse(this.txtTotalCount.Text.Trim());
+            inventory.RentPrice = decimal.Parse(this.txtRentPrice.Text.Trim());
+            inventory.SellPrice = decimal.Parse(this.txtSellPrice.Text.Trim());
+            inventory.Remark = this.txtRemark.Text.Trim();
+            inventory.StyleId = _styleId;
+            inventory.Status = "Normal";
+            inventory.Operator = 1;
+            return inventory;
         }
 
         private string ValidateInputs()
