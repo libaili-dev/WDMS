@@ -67,6 +67,12 @@
     <Compile Include="FormNewInventory.Designer.cs">
       <DependentUpon>FormNewInventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQueryInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueryInventory.Designer.cs">
+      <DependentUpon>FormQueryInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNewAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewInventory.resx">
       <DependentUpon>FormNewInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQueryInventory.resx">
+      <DependentUpon>FormQueryInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNewAdmin.resx">
       <DependentUpon>FormNewAdmin.cs</DependentUpon>

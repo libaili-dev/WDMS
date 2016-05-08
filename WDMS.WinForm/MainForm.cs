@@ -51,5 +51,12 @@ namespace WDMS.WinForm
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
+
+        private void newInventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQueryInventory frm = new FormQueryInventory();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
+        }
     }
 }

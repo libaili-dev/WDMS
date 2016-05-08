@@ -19,6 +19,7 @@ namespace WDMS.WinForm
             this.gridData.AllowUserToAddRows = false;
             this.gridData.BackgroundColor = Color.White;
             this.gridData.RowHeadersVisible = false;
+            this.gridData.MultiSelect = false;
             this.gridData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.gridData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -64,7 +65,10 @@ namespace WDMS.WinForm
         {
             if(this.gridData.RowCount>0)
             {
-                
+                string styleNo = this.gridData.SelectedRows[0].Cells["StyleNo"].Value.ToString();
+                FormQueryInventory frm = new FormQueryInventory(styleNo);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
             }
         }
 

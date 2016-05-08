@@ -20,6 +20,7 @@ namespace WDMS.WinForm
             this.gridCustomers.AllowUserToAddRows = false;
             this.gridCustomers.BackgroundColor = Color.White;
             this.gridCustomers.RowHeadersVisible = false;
+            this.gridCustomers.MultiSelect = false;
             this.gridCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.gridCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }

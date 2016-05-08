@@ -33,14 +33,14 @@
             this.btnQuery = new System.Windows.Forms.Button();
             this.gridAdmin = new System.Windows.Forms.DataGridView();
             this.panelMessage = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddAdmin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.btnAddAdmin = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridAdmin)).BeginInit();
             this.panelMessage.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -54,15 +54,15 @@
             // 
             // txtKeyword
             // 
-            this.txtKeyword.Location = new System.Drawing.Point(157, 11);
+            this.txtKeyword.Location = new System.Drawing.Point(75, 11);
             this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(354, 20);
+            this.txtKeyword.Size = new System.Drawing.Size(239, 20);
             this.txtKeyword.TabIndex = 1;
             this.txtKeyword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyword_KeyPress);
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(548, 9);
+            this.btnQuery.Location = new System.Drawing.Point(446, 8);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 25);
             this.btnQuery.TabIndex = 2;
@@ -79,20 +79,38 @@
             this.gridAdmin.Location = new System.Drawing.Point(12, 59);
             this.gridAdmin.Name = "gridAdmin";
             this.gridAdmin.RowTemplate.Height = 23;
-            this.gridAdmin.Size = new System.Drawing.Size(731, 473);
+            this.gridAdmin.Size = new System.Drawing.Size(514, 261);
             this.gridAdmin.TabIndex = 3;
             // 
             // panelMessage
             // 
-            this.panelMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMessage.Controls.Add(this.panel2);
             this.panelMessage.Controls.Add(this.panel1);
-            this.panelMessage.Location = new System.Drawing.Point(12, 534);
+            this.panelMessage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMessage.Location = new System.Drawing.Point(0, 336);
             this.panelMessage.Name = "panelMessage";
-            this.panelMessage.Size = new System.Drawing.Size(731, 48);
+            this.panelMessage.Size = new System.Drawing.Size(538, 48);
             this.panelMessage.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnAddAdmin);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(410, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(128, 35);
+            this.panel2.TabIndex = 2;
+            // 
+            // btnAddAdmin
+            // 
+            this.btnAddAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddAdmin.Location = new System.Drawing.Point(36, 4);
+            this.btnAddAdmin.Name = "btnAddAdmin";
+            this.btnAddAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAdmin.TabIndex = 1;
+            this.btnAddAdmin.Text = "添加管理员";
+            this.btnAddAdmin.UseVisualStyleBackColor = true;
+            this.btnAddAdmin.Click += new System.EventHandler(this.btnAddAdmin_Click);
             // 
             // panel1
             // 
@@ -112,43 +130,23 @@
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 0;
             // 
-            // btnAddAdmin
-            // 
-            this.btnAddAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddAdmin.Location = new System.Drawing.Point(229, 4);
-            this.btnAddAdmin.Name = "btnAddAdmin";
-            this.btnAddAdmin.Size = new System.Drawing.Size(75, 23);
-            this.btnAddAdmin.TabIndex = 1;
-            this.btnAddAdmin.Text = "添加管理员";
-            this.btnAddAdmin.UseVisualStyleBackColor = true;
-            this.btnAddAdmin.Click += new System.EventHandler(this.btnAddAdmin_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnAddAdmin);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(410, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(321, 35);
-            this.panel2.TabIndex = 2;
-            // 
             // FormQueryAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 582);
+            this.ClientSize = new System.Drawing.Size(538, 384);
             this.Controls.Add(this.panelMessage);
             this.Controls.Add(this.gridAdmin);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.txtKeyword);
             this.Controls.Add(this.lblName);
             this.Name = "FormQueryAdmin";
-            this.Text = "客户信息查询";
+            this.Text = "管理员信息查询";
             ((System.ComponentModel.ISupportInitialize)(this.gridAdmin)).EndInit();
             this.panelMessage.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
