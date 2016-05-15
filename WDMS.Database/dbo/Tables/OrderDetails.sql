@@ -7,14 +7,15 @@
     [ExpressNo]     NVARCHAR (50)   NULL,
     [Price]         DECIMAL (15, 2) NULL,
     [Status]        NVARCHAR (50)   NULL,
-    [Operator]      INT             NOT NULL,
     [CreateTime]    DATETIME        CONSTRAINT [DF_OrderDetails_CreateTime] DEFAULT (getdate()) NOT NULL,
     [UpdateTime]    DATETIME        NULL,
     [Remark]        NVARCHAR (200)  NULL,
     CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED ([OrderDatailId] ASC),
     CONSTRAINT [FK_OrderDetails_Inventory] FOREIGN KEY ([InventoryId]) REFERENCES [dbo].[Inventory] ([InventoryId]),
-    CONSTRAINT [FK_OrderDetails_Orders] FOREIGN KEY ([OrderBatchId]) REFERENCES [dbo].[Orders] ([OrderBatchId]) 
+    CONSTRAINT [FK_OrderDetails_Orders] FOREIGN KEY ([OrderBatchId]) REFERENCES [dbo].[Orders] ([OrderBatchId])
 );
+
+
 
 
 
