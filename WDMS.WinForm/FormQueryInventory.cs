@@ -14,6 +14,8 @@ namespace WDMS.WinForm
     public partial class FormQueryInventory : Form
     {
         private string _styleNo = string.Empty;
+        public Inventory SelectedInventory { get; set; }
+
         public FormQueryInventory()
         {
             InitializeComponent();
@@ -37,6 +39,17 @@ namespace WDMS.WinForm
             InitControls();
             this.txtStyleNo.Text= styleNo;
             btnQueryInventory_Click(null, null);
+        }
+
+        public FormQueryInventory(bool isHideOperationControls)
+        {
+            InitializeComponent();
+            InitControls();
+            if(isHideOperationControls)
+            {
+                this.btnCreateNewInventory.Visible = false;
+                this.btnModifyInventory.Visible = false;
+            }
         }
 
         private void btnQueryInventory_Click(object sender, EventArgs e)
@@ -156,6 +169,24 @@ namespace WDMS.WinForm
                 frm.StartPosition = FormStartPosition.CenterParent;
                 frm.ShowDialog();
             }
+        }
+
+        private void gridInventory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.gridInventory.RowCount > 0)
+            {
+                int inventoryId = int.Parse(this.gridInventory.SelectedRows[0].Cells["InventoryId"].Value.ToString());
+                using (var context = new WDMSEntities())
+                {
+                    var inventory = (from inv in context.Inventory
+                                     where inv.InventoryId == inventoryId
+                                     select inv).ToList().First();
+
+                    this.SelectedInventory = inventory;
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            this.Close();
         }
     }
 }

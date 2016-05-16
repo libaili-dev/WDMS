@@ -71,7 +71,7 @@ namespace WDMS.WinForm
                         this.lblMessage.Text = string.Format("新增款式：{0}失败！该编码号款式已经存在！", style.StyleNo);
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
                     this.lblMessage.Text = string.Format("新增款式：{0}失败！", style.StyleNo);
                 }

@@ -82,6 +82,7 @@
             this.gridCustomers.RowTemplate.Height = 23;
             this.gridCustomers.Size = new System.Drawing.Size(585, 285);
             this.gridCustomers.TabIndex = 3;
+            this.gridCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomers_CellDoubleClick);
             // 
             // panelMessage
             // 

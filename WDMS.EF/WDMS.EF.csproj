@@ -79,9 +79,6 @@
     <Compile Include="Styles.cs">
       <DependentUpon>WDMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>WDMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="WDMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

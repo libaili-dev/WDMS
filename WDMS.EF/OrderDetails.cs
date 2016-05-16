@@ -22,7 +22,6 @@ namespace WDMS.EF
         public string ExpressNo { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string Status { get; set; }
-        public int Operator { get; set; }
         public System.DateTime CreateTime { get; set; }
         public Nullable<System.DateTime> UpdateTime { get; set; }
         public string Remark { get; set; }

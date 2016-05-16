@@ -68,7 +68,9 @@ namespace WDMS.WinForm
 
         private void newOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormNewOrder frm = new FormNewOrder();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
     }
 }
