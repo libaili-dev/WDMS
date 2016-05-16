@@ -13,16 +13,33 @@ namespace WDMS.WinForm
 {
     public partial class FormQueryCustomer : Form
     {
+        public string FormMode { get; set; }
+        public Customer SelectedCustomer { get; set; }
+
         public FormQueryCustomer()
         {
             InitializeComponent();
 
+            InitControls();
+        }
+
+        private void InitControls()
+        {
             this.gridCustomers.AllowUserToAddRows = false;
             this.gridCustomers.BackgroundColor = Color.White;
             this.gridCustomers.RowHeadersVisible = false;
             this.gridCustomers.MultiSelect = false;
             this.gridCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.gridCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        public FormQueryCustomer(string formMode)
+        {
+            InitializeComponent();
+
+            InitControls();
+
+            this.FormMode = formMode;
         }
 
         private void btnQuery_Click(object sender, EventArgs e)
@@ -96,6 +113,26 @@ namespace WDMS.WinForm
                 int customerId = int.Parse(this.gridCustomers.SelectedRows[0].Cells["CustomerId"].Value.ToString());
                 FormNewCustomer frmEditCustomer = new FormNewCustomer(customerId);
                 frmEditCustomer.ShowDialog();
+            }
+        }
+
+        private void gridCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(this.FormMode))
+            {
+                if (this.FormMode.Equals("QueryFromOrder"))
+                {
+                    int customerId = int.Parse(this.gridCustomers.SelectedRows[0].Cells["CustomerId"].Value.ToString());
+
+                    using (var context = new WDMSEntities())
+                    {
+                        this.SelectedCustomer = context.Customer.FirstOrDefault<Customer>(tmp => tmp.CustomerId == customerId);
+                    }
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+                }
             }
         }
     }

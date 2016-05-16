@@ -154,6 +154,7 @@
             this.gridInventory.RowTemplate.Height = 23;
             this.gridInventory.Size = new System.Drawing.Size(499, 240);
             this.gridInventory.TabIndex = 0;
+            this.gridInventory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridInventory_CellDoubleClick);
             // 
             // FormQueryInventory
             // 
