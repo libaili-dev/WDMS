@@ -183,6 +183,7 @@ namespace WDMS.WinForm
                                      select inv).ToList().First();
 
                     this.SelectedInventory = inventory;
+                    this.SelectedInventory.Styles = inventory.Styles;
                     this.DialogResult = DialogResult.OK;
                 }
             }
