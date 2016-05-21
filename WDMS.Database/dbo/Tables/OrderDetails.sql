@@ -3,6 +3,7 @@
     [OrderBatchId]  INT             NOT NULL,
     [OrderType]     NVARCHAR (50)   NULL,
     [InventoryId]   INT             NOT NULL,
+    [Count]         INT             CONSTRAINT [DF_OrderDetails_Count] DEFAULT ((1)) NOT NULL,
     [DeliveryWay]   NVARCHAR (10)   NULL,
     [ExpressNo]     NVARCHAR (50)   NULL,
     [Price]         DECIMAL (15, 2) NULL,
@@ -14,6 +15,8 @@
     CONSTRAINT [FK_OrderDetails_Inventory] FOREIGN KEY ([InventoryId]) REFERENCES [dbo].[Inventory] ([InventoryId]),
     CONSTRAINT [FK_OrderDetails_Orders] FOREIGN KEY ([OrderBatchId]) REFERENCES [dbo].[Orders] ([OrderBatchId])
 );
+
+
 
 
 
