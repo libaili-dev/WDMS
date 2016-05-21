@@ -20,6 +20,7 @@
         <AssociationConnector Association="WDMS.EF.FK_Inventory_Styles" ManuallyRouted="false" />
         <AssociationConnector Association="WDMS.EF.FK_OrderDetails_Inventory" ManuallyRouted="false" />
         <AssociationConnector Association="WDMS.EF.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WDMS.EF.sysdiagrams" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

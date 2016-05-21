@@ -25,6 +25,7 @@ namespace WDMS.EF
         public System.DateTime CreateTime { get; set; }
         public Nullable<System.DateTime> UpdateTime { get; set; }
         public string Remark { get; set; }
+        public int Count { get; set; }
     
         public virtual Inventory Inventory { get; set; }
         public virtual Orders Orders { get; set; }
