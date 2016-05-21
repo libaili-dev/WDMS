@@ -79,7 +79,19 @@ namespace WDMS.WinForm
                     {
                         var orderDetail = (from od in context.OrderDetails
                                            where od.OrderBatchId == order.OrderBatchId
-                                           select od).ToList<OrderDetails>();
+                                           select new
+                                           {
+                                               od.OrderDatailId,
+                                               od.OrderType,
+                                               od.Status,
+                                               od.DeliveryWay,
+                                               od.ExpressNo,
+                                               od.InventoryId,
+                                               od.Inventory.Styles.StyleNo,
+                                               od.CreateTime,
+                                               od.UpdateTime,
+                                               od.Remark
+                                           }).ToList();
                         
                         if (orderDetail != null && orderDetail.Count > 0)
                         {
@@ -102,6 +114,7 @@ namespace WDMS.WinForm
             frm.StartPosition = FormStartPosition.CenterParent;
             if (frm.ShowDialog() == DialogResult.OK)
             {
+                this.gridOrderList.DataSource = null;
                 using (var context = new WDMSEntities())
                 {
                     var orderDetailList = (from od in context.OrderDetails
@@ -114,6 +127,7 @@ namespace WDMS.WinForm
                                                od.DeliveryWay,
                                                od.ExpressNo,
                                                od.InventoryId,
+                                               od.Inventory.Styles.StyleNo,
                                                od.CreateTime,
                                                od.UpdateTime,
                                                od.Remark
