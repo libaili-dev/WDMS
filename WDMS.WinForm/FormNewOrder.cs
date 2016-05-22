@@ -69,6 +69,7 @@ namespace WDMS.WinForm
                         order = new Orders();
                         order.CustomerId = customer.CustomerId;
                         order.CreateTime = DateTime.Now;
+                        order.Status = "NEW";
                         order.Operator = int.Parse(this.cmbOperator.SelectedValue.ToString());
                         order.Assistant = int.Parse(this.cmbAssistant.SelectedValue.ToString());
                         context.Orders.Add(order);
