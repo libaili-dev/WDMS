@@ -139,6 +139,7 @@ namespace WDMS.WinForm
                     this.txtRentPrice.Text = string.Empty;
                     this.txtRemark.Text = string.Empty;
                 }
+                this.DialogResult = DialogResult.OK;
             }
         }
 

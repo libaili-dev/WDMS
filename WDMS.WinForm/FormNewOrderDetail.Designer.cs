@@ -47,12 +47,15 @@
             this.lblExpressNoDesc = new System.Windows.Forms.Label();
             this.txtExpressNo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnModifyInventory = new System.Windows.Forms.Button();
+            this.txtCount = new System.Windows.Forms.TextBox();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.btnInventroyReselect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnUpdateOrderDetail = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -216,7 +219,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnModifyInventory);
+            this.panel1.Controls.Add(this.txtCount);
+            this.panel1.Controls.Add(this.lblCount);
+            this.panel1.Controls.Add(this.btnInventroyReselect);
             this.panel1.Controls.Add(this.lblInventoryIdDesc);
             this.panel1.Controls.Add(this.txtRemrk);
             this.panel1.Controls.Add(this.txtExpressNo);
@@ -241,15 +246,32 @@
             this.panel1.Size = new System.Drawing.Size(517, 405);
             this.panel1.TabIndex = 18;
             // 
-            // btnModifyInventory
+            // txtCount
             // 
-            this.btnModifyInventory.Location = new System.Drawing.Point(232, 42);
-            this.btnModifyInventory.Name = "btnModifyInventory";
-            this.btnModifyInventory.Size = new System.Drawing.Size(75, 23);
-            this.btnModifyInventory.TabIndex = 18;
-            this.btnModifyInventory.Text = "款式重选";
-            this.btnModifyInventory.UseVisualStyleBackColor = true;
-            this.btnModifyInventory.Click += new System.EventHandler(this.btnModifyInventory_Click);
+            this.txtCount.Location = new System.Drawing.Point(302, 147);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.Size = new System.Drawing.Size(100, 20);
+            this.txtCount.TabIndex = 20;
+            this.txtCount.Text = "1";
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(229, 150);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(43, 13);
+            this.lblCount.TabIndex = 19;
+            this.lblCount.Text = "数量：";
+            // 
+            // btnInventroyReselect
+            // 
+            this.btnInventroyReselect.Location = new System.Drawing.Point(232, 42);
+            this.btnInventroyReselect.Name = "btnInventroyReselect";
+            this.btnInventroyReselect.Size = new System.Drawing.Size(75, 23);
+            this.btnInventroyReselect.TabIndex = 18;
+            this.btnInventroyReselect.Text = "款式重选";
+            this.btnInventroyReselect.UseVisualStyleBackColor = true;
+            this.btnInventroyReselect.Click += new System.EventHandler(this.btnInventroyReselect_Click);
             // 
             // panel2
             // 
@@ -261,36 +283,6 @@
             this.panel2.Size = new System.Drawing.Size(517, 38);
             this.panel2.TabIndex = 19;
             // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Location = new System.Drawing.Point(23, 8);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirm.TabIndex = 0;
-            this.btnConfirm.Text = "确定(&S)";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnCancel);
-            this.panel3.Controls.Add(this.btnConfirm);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(305, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(212, 38);
-            this.panel3.TabIndex = 0;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(112, 8);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "取消(&C)";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
@@ -299,6 +291,47 @@
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnUpdateOrderDetail);
+            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.btnConfirm);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(271, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(246, 38);
+            this.panel3.TabIndex = 0;
+            // 
+            // btnUpdateOrderDetail
+            // 
+            this.btnUpdateOrderDetail.Location = new System.Drawing.Point(84, 8);
+            this.btnUpdateOrderDetail.Name = "btnUpdateOrderDetail";
+            this.btnUpdateOrderDetail.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateOrderDetail.TabIndex = 2;
+            this.btnUpdateOrderDetail.Text = "修改(&M)";
+            this.btnUpdateOrderDetail.UseVisualStyleBackColor = true;
+            this.btnUpdateOrderDetail.Click += new System.EventHandler(this.btnUpdateOrderDetail_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(165, 8);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "取消(&C)";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(3, 8);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.TabIndex = 0;
+            this.btnConfirm.Text = "确定(&S)";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // FormNewOrderDetail
             // 
@@ -339,11 +372,14 @@
         private System.Windows.Forms.Label lblExpressNoDesc;
         private System.Windows.Forms.TextBox txtExpressNo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnModifyInventory;
+        private System.Windows.Forms.Button btnInventroyReselect;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.TextBox txtCount;
+        private System.Windows.Forms.Button btnUpdateOrderDetail;
     }
 }
