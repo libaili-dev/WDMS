@@ -104,8 +104,8 @@ namespace WDMS.WinForm
                             this.lblOrderMessage.Text = "订单列表为空。";
                         }
                     }
-
                     this._orderBatchId = order.OrderBatchId;
+
                 }
             }
         }
@@ -113,7 +113,7 @@ namespace WDMS.WinForm
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             this.lblMessage.Text = string.Empty;
-            if (this.customer==null || this.customer.CustomerId==0)
+            if (this.customer == null || this.customer.CustomerId == 0)
             {
                 this.lblMessage.Text = "请先选择客户。";
                 return;
@@ -195,11 +195,12 @@ namespace WDMS.WinForm
 
         private void btnDeleteOrderDetail_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("确定删除该项订单？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (this.gridOrderList.RowCount > 0)
             {
-                if (this.gridOrderList.RowCount > 0)
+                DialogResult dr = MessageBox.Show("确定删除该项订单？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
                 {
+
                     int orderDetailId = int.Parse(this.gridOrderList.CurrentRow.Cells["OrderDatailId"].Value.ToString());
                     using (var context = new WDMSEntities())
                     {

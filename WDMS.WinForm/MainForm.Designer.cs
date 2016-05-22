@@ -57,6 +57,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelivery = new System.Windows.Forms.Button();
             this.menuStripMainForm.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.tabCtrlToDelivery.SuspendLayout();
@@ -315,12 +316,23 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnDelivery);
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(610, 0);
+            this.panel2.Location = new System.Drawing.Point(575, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(216, 48);
+            this.panel2.Size = new System.Drawing.Size(251, 48);
             this.panel2.TabIndex = 3;
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.Location = new System.Drawing.Point(15, 13);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(53, 23);
+            this.btnDelivery.TabIndex = 3;
+            this.btnDelivery.Text = "发件(&S)";
+            this.btnDelivery.UseVisualStyleBackColor = true;
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
             // 
             // MainForm
             // 
@@ -378,6 +390,7 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnDelivery;
     }
 }
 

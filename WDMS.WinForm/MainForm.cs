@@ -117,5 +117,13 @@ namespace WDMS.WinForm
                 this.gridToDelivery.DataSource = orderList;
             }
         }
+
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+            if(this.gridToDelivery.RowCount>0)
+            {
+
+            }
+        }
     }
 }
