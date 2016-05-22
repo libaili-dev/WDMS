@@ -31,13 +31,15 @@ namespace WDMS.WinForm
             this.gridInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.gridInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.btnCreateNewInventory.Visible = false;
+            this.btnDeleteInventory.Visible = false;
         }
 
         public FormQueryInventory(string styleNo)
         {
             InitializeComponent();
+            this.txtStyleNo.Text = styleNo;
+            this.txtStyleNo.Enabled = false;
             InitControls();
-            this.txtStyleNo.Text= styleNo;
             btnQueryInventory_Click(null, null);
         }
 
@@ -49,6 +51,7 @@ namespace WDMS.WinForm
             {
                 this.btnCreateNewInventory.Visible = false;
                 this.btnModifyInventory.Visible = false;
+                this.btnDeleteInventory.Visible = false;
             }
         }
 
@@ -66,43 +69,54 @@ namespace WDMS.WinForm
                 using (var context = new WDMSEntities())
                 {
                     var style = context.Styles.FirstOrDefault<Styles>(tmp => tmp.StyleNo.Equals(styleNo));
-                    if (style == null || style.StyleId==0)
+                    if (style == null || style.StyleId == 0)
                     {
                         this.lblMessage.Text = "该款式不存在，请先创建款式！";
+                        this.btnCreateNewInventory.Visible = false;
+                        this.btnModifyInventory.Visible = false;
+                        this.btnDeleteInventory.Visible = false;
                         return;
                     }
                     else
                     {
                         _styleNo = style.StyleNo;
                         this.btnCreateNewInventory.Visible = true;
+                        BindInventoryList(styleNo);
                     }
                 }
 
-                using (var context = new WDMSEntities())
+            }
+        }
+
+        private void BindInventoryList(string styleNo)
+        {
+            this.gridInventory.DataSource = null;
+            using (var context = new WDMSEntities())
+            {
+                //var invList = context.Inventory.Where(t => t.Styles.StyleNo.Equals(styleNo)).ToList();
+                var invList = (from tmpInv in context.Inventory
+                               where tmpInv.Styles.StyleNo.Equals(styleNo)
+                               select new
+                               {
+                                   tmpInv.InventoryId,
+                                   tmpInv.Size,
+                                   tmpInv.TotalCount,
+                                   tmpInv.RentPrice,
+                                   tmpInv.SellPrice,
+                                   tmpInv.CreateTime,
+                                   tmpInv.UpdateTime,
+                                   tmpInv.Remark
+                               }).ToList();
+                if (invList != null && invList.Count > 0)
                 {
-                    //var invList = context.Inventory.Where(t => t.Styles.StyleNo.Equals(styleNo)).ToList();
-                    var invList = (from tmpInv in context.Inventory
-                                   where tmpInv.Styles.StyleNo.Equals(styleNo)
-                                   select new
-                                   {
-                                       tmpInv.InventoryId,
-                                       tmpInv.Size,
-                                       tmpInv.TotalCount,
-                                       tmpInv.RentPrice,
-                                       tmpInv.SellPrice,
-                                       tmpInv.CreateTime,
-                                       tmpInv.UpdateTime,
-                                       tmpInv.Remark
-                                   }).ToList();
-                    if (invList != null && invList.Count > 0)
-                    {
-                        this.gridInventory.DataSource = invList;
-                        this.btnCreateNewInventory.Visible = true;
-                    }
-                    else
-                    {
-                        this.lblMessage.Text = "该款式暂无库存信息！";
-                    }
+                    this.gridInventory.DataSource = invList;
+                    this.btnCreateNewInventory.Visible = true;
+                    this.btnDeleteInventory.Visible = true;
+                    this.btnModifyInventory.Visible = true;
+                }
+                else
+                {
+                    this.lblMessage.Text = "该款式暂无库存信息！";
                 }
             }
         }
@@ -113,7 +127,10 @@ namespace WDMS.WinForm
             {
                 FormNewInventory frm = new FormNewInventory(_styleNo);
                 frm.StartPosition = FormStartPosition.CenterParent;
-                frm.ShowDialog();
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    BindInventoryList(_styleNo);
+                }
             }
             else
             {
@@ -122,43 +139,7 @@ namespace WDMS.WinForm
         }
 
 
-        public void BindInventoryList()
-        {
-            string styleNo = this.txtStyleNo.Text.Trim();
-            if (!string.IsNullOrEmpty(styleNo))
-            {
-                using (var context = new WDMSEntities())
-                {
-                    var curStyleId = (from style in context.Styles
-                                      where style.StyleNo.Equals(styleNo)
-                                      select style.StyleId).ToString();
-                    if (!string.IsNullOrEmpty(curStyleId))
-                    {
-                        var inventoryList = (from inv in context.Inventory
-                                             where inv.StyleId.Equals(curStyleId)
-                                             select new
-                                             {
-                                                 inv.InventoryId,
-                                                 inv.Styles.StyleNo,
-                                                 inv.Size,
-                                                 inv.TotalCount,
-                                                 inv.CreateTime,
-                                                 inv.Remark
-                                             }).ToList();
-                        if (inventoryList.Count > 0)
-                        {
-                            this.gridInventory.DataSource = inventoryList;
-                        }
-                        else
-                        {
-                            this.lblMessage.Text = "该款式暂无库存信息！";
-                        }
-                    }
-
-                }
-
-            }
-        }
+       
 
         private void btnModifyInventory_Click(object sender, EventArgs e)
         {
@@ -188,6 +169,22 @@ namespace WDMS.WinForm
                 }
             }
             this.Close();
+        }
+
+        private void btnDeleteInventory_Click(object sender, EventArgs e)
+        {
+            if (this.gridInventory.RowCount > 0)
+            {
+                int inventoryId = int.Parse(this.gridInventory.CurrentRow.Cells["InventoryId"].Value.ToString());
+                using (var context = new WDMSEntities())
+                {
+                    var inv = context.Inventory.Find(inventoryId);
+                    context.Inventory.Remove(inv);
+                    context.SaveChanges();
+                    this.lblMessage.Text = "已删除!";
+                }
+                BindInventoryList(this.txtStyleNo.Text.Trim());
+            }
         }
     }
 }

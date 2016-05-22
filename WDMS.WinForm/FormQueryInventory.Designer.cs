@@ -39,6 +39,7 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridInventory = new System.Windows.Forms.DataGridView();
+            this.btnDeleteInventory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -97,17 +98,18 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnDeleteInventory);
             this.panel3.Controls.Add(this.btnModifyInventory);
             this.panel3.Controls.Add(this.btnCreateNewInventory);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(257, 0);
+            this.panel3.Location = new System.Drawing.Point(211, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(248, 40);
+            this.panel3.Size = new System.Drawing.Size(294, 40);
             this.panel3.TabIndex = 6;
             // 
             // btnModifyInventory
             // 
-            this.btnModifyInventory.Location = new System.Drawing.Point(49, 10);
+            this.btnModifyInventory.Location = new System.Drawing.Point(117, 8);
             this.btnModifyInventory.Name = "btnModifyInventory";
             this.btnModifyInventory.Size = new System.Drawing.Size(81, 23);
             this.btnModifyInventory.TabIndex = 2;
@@ -117,7 +119,7 @@
             // 
             // btnCreateNewInventory
             // 
-            this.btnCreateNewInventory.Location = new System.Drawing.Point(159, 9);
+            this.btnCreateNewInventory.Location = new System.Drawing.Point(34, 6);
             this.btnCreateNewInventory.Name = "btnCreateNewInventory";
             this.btnCreateNewInventory.Size = new System.Drawing.Size(77, 25);
             this.btnCreateNewInventory.TabIndex = 1;
@@ -156,6 +158,16 @@
             this.gridInventory.TabIndex = 0;
             this.gridInventory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridInventory_CellDoubleClick);
             // 
+            // btnDeleteInventory
+            // 
+            this.btnDeleteInventory.Location = new System.Drawing.Point(204, 7);
+            this.btnDeleteInventory.Name = "btnDeleteInventory";
+            this.btnDeleteInventory.Size = new System.Drawing.Size(78, 23);
+            this.btnDeleteInventory.TabIndex = 3;
+            this.btnDeleteInventory.Text = "删除库存(&D)";
+            this.btnDeleteInventory.UseVisualStyleBackColor = true;
+            this.btnDeleteInventory.Click += new System.EventHandler(this.btnDeleteInventory_Click);
+            // 
             // FormQueryInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,5 +200,6 @@
         private System.Windows.Forms.DataGridView gridInventory;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnModifyInventory;
+        private System.Windows.Forms.Button btnDeleteInventory;
     }
 }

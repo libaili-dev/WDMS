@@ -35,6 +35,8 @@ namespace WDMS.WinForm
             }
             else
             {
+                this.gridData.DataSource = null;
+                this.gridData.Refresh();
                 using (var context = new WDMSEntities())
                 {
                     var styleList = (from tmpStyle in context.Styles
@@ -50,12 +52,16 @@ namespace WDMS.WinForm
 
                     if (styleList.Count > 0)
                     {
+                        this.btnModifyStyle.Visible = true;
+                        this.btnCreateInvenory.Visible = true;
                         this.gridData.DataSource = styleList;
                         this.gridData.Rows[0].Selected = true;
                     }
                     else
                     {
-                        this.lblMessage.Text = "无记录";
+                        this.lblMessage.Text = "还未录入该款式。";
+                        this.btnModifyStyle.Visible = false;
+                        this.btnCreateInvenory.Visible = false;
                     }
                 }
             }

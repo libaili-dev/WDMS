@@ -30,6 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBoxCustomerName = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.lblRemark = new System.Windows.Forms.Label();
             this.lblRemarkDesc = new System.Windows.Forms.Label();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
@@ -40,24 +41,26 @@
             this.lblCustomerNameDesc = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblAssistantDesc = new System.Windows.Forms.Label();
-            this.cmbAssistant = new System.Windows.Forms.ComboBox();
-            this.lblOperatorDesc = new System.Windows.Forms.Label();
-            this.cmbOperator = new System.Windows.Forms.ComboBox();
-            this.groupBoxOrder = new System.Windows.Forms.GroupBox();
-            this.lblOrderMessage = new System.Windows.Forms.Label();
-            this.gridOrderList = new System.Windows.Forms.DataGridView();
-            this.btnAddOrder = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDeleteOrderDetail = new System.Windows.Forms.Button();
+            this.btnModifyOrderDetail = new System.Windows.Forms.Button();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblOperatorDesc = new System.Windows.Forms.Label();
+            this.cmbAssistant = new System.Windows.Forms.ComboBox();
+            this.cmbOperator = new System.Windows.Forms.ComboBox();
+            this.lblAssistantDesc = new System.Windows.Forms.Label();
+            this.lblOrderMessage = new System.Windows.Forms.Label();
+            this.groupBoxOrder = new System.Windows.Forms.GroupBox();
+            this.gridOrderList = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.groupBoxCustomerName.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.groupBoxOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderList)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +76,7 @@
             // 
             // groupBoxCustomerName
             // 
+            this.groupBoxCustomerName.Controls.Add(this.panel5);
             this.groupBoxCustomerName.Controls.Add(this.lblRemark);
             this.groupBoxCustomerName.Controls.Add(this.lblRemarkDesc);
             this.groupBoxCustomerName.Controls.Add(this.btnSearchCustomer);
@@ -90,6 +94,13 @@
             this.groupBoxCustomerName.TabIndex = 2;
             this.groupBoxCustomerName.TabStop = false;
             this.groupBoxCustomerName.Text = "客户信息";
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(264, 83);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(427, 44);
+            this.panel5.TabIndex = 3;
             // 
             // lblRemark
             // 
@@ -183,10 +194,19 @@
             this.panel3.Size = new System.Drawing.Size(733, 39);
             this.panel3.TabIndex = 1;
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.ForeColor = System.Drawing.Color.Fuchsia;
+            this.lblMessage.Location = new System.Drawing.Point(15, 17);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblMessage.TabIndex = 2;
+            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.btnDeleteOrderDetail);
+            this.panel4.Controls.Add(this.btnModifyOrderDetail);
             this.panel4.Controls.Add(this.btnAddOrder);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(366, 0);
@@ -194,82 +214,25 @@
             this.panel4.Size = new System.Drawing.Size(367, 39);
             this.panel4.TabIndex = 1;
             // 
-            // panel1
+            // btnDeleteOrderDetail
             // 
-            this.panel1.Controls.Add(this.lblOrderMessage);
-            this.panel1.Controls.Add(this.lblAssistantDesc);
-            this.panel1.Controls.Add(this.cmbAssistant);
-            this.panel1.Controls.Add(this.lblOperatorDesc);
-            this.panel1.Controls.Add(this.cmbOperator);
-            this.panel1.Controls.Add(this.groupBoxOrder);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 142);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(733, 316);
-            this.panel1.TabIndex = 2;
+            this.btnDeleteOrderDetail.Location = new System.Drawing.Point(274, 6);
+            this.btnDeleteOrderDetail.Name = "btnDeleteOrderDetail";
+            this.btnDeleteOrderDetail.Size = new System.Drawing.Size(78, 23);
+            this.btnDeleteOrderDetail.TabIndex = 5;
+            this.btnDeleteOrderDetail.Text = "删除订单(&D)";
+            this.btnDeleteOrderDetail.UseVisualStyleBackColor = true;
+            this.btnDeleteOrderDetail.Click += new System.EventHandler(this.btnDeleteOrderDetail_Click);
             // 
-            // lblAssistantDesc
+            // btnModifyOrderDetail
             // 
-            this.lblAssistantDesc.AutoSize = true;
-            this.lblAssistantDesc.Location = new System.Drawing.Point(548, 287);
-            this.lblAssistantDesc.Name = "lblAssistantDesc";
-            this.lblAssistantDesc.Size = new System.Drawing.Size(43, 13);
-            this.lblAssistantDesc.TabIndex = 2;
-            this.lblAssistantDesc.Text = "助理：";
-            // 
-            // cmbAssistant
-            // 
-            this.cmbAssistant.FormattingEnabled = true;
-            this.cmbAssistant.Location = new System.Drawing.Point(597, 284);
-            this.cmbAssistant.Name = "cmbAssistant";
-            this.cmbAssistant.Size = new System.Drawing.Size(121, 21);
-            this.cmbAssistant.TabIndex = 1;
-            // 
-            // lblOperatorDesc
-            // 
-            this.lblOperatorDesc.AutoSize = true;
-            this.lblOperatorDesc.Location = new System.Drawing.Point(329, 287);
-            this.lblOperatorDesc.Name = "lblOperatorDesc";
-            this.lblOperatorDesc.Size = new System.Drawing.Size(55, 13);
-            this.lblOperatorDesc.TabIndex = 2;
-            this.lblOperatorDesc.Text = "负责人：";
-            // 
-            // cmbOperator
-            // 
-            this.cmbOperator.FormattingEnabled = true;
-            this.cmbOperator.Location = new System.Drawing.Point(390, 284);
-            this.cmbOperator.Name = "cmbOperator";
-            this.cmbOperator.Size = new System.Drawing.Size(121, 21);
-            this.cmbOperator.TabIndex = 1;
-            // 
-            // groupBoxOrder
-            // 
-            this.groupBoxOrder.Controls.Add(this.gridOrderList);
-            this.groupBoxOrder.Location = new System.Drawing.Point(12, 15);
-            this.groupBoxOrder.Name = "groupBoxOrder";
-            this.groupBoxOrder.Size = new System.Drawing.Size(709, 263);
-            this.groupBoxOrder.TabIndex = 0;
-            this.groupBoxOrder.TabStop = false;
-            this.groupBoxOrder.Text = "订单列表";
-            // 
-            // lblOrderMessage
-            // 
-            this.lblOrderMessage.AutoSize = true;
-            this.lblOrderMessage.ForeColor = System.Drawing.Color.Fuchsia;
-            this.lblOrderMessage.Location = new System.Drawing.Point(37, 287);
-            this.lblOrderMessage.Name = "lblOrderMessage";
-            this.lblOrderMessage.Size = new System.Drawing.Size(35, 13);
-            this.lblOrderMessage.TabIndex = 0;
-            this.lblOrderMessage.Text = "label1";
-            // 
-            // gridOrderList
-            // 
-            this.gridOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridOrderList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridOrderList.Location = new System.Drawing.Point(3, 16);
-            this.gridOrderList.Name = "gridOrderList";
-            this.gridOrderList.Size = new System.Drawing.Size(703, 244);
-            this.gridOrderList.TabIndex = 0;
+            this.btnModifyOrderDetail.Location = new System.Drawing.Point(178, 6);
+            this.btnModifyOrderDetail.Name = "btnModifyOrderDetail";
+            this.btnModifyOrderDetail.Size = new System.Drawing.Size(79, 23);
+            this.btnModifyOrderDetail.TabIndex = 4;
+            this.btnModifyOrderDetail.Text = "修改订单(&M)";
+            this.btnModifyOrderDetail.UseVisualStyleBackColor = true;
+            this.btnModifyOrderDetail.Click += new System.EventHandler(this.btnModifyOrderDetail_Click);
             // 
             // btnAddOrder
             // 
@@ -281,31 +244,93 @@
             this.btnAddOrder.UseVisualStyleBackColor = true;
             this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
-            // button1
+            // panel1
             // 
-            this.button1.Location = new System.Drawing.Point(178, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "修改订单(&M)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.lblOrderMessage);
+            this.panel1.Controls.Add(this.groupBoxOrder);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 142);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(733, 316);
+            this.panel1.TabIndex = 2;
             // 
-            // button2
+            // panel6
             // 
-            this.button2.Location = new System.Drawing.Point(274, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "删除订单(&D)";
-            this.button2.UseVisualStyleBackColor = true;
+            this.panel6.Controls.Add(this.lblOperatorDesc);
+            this.panel6.Controls.Add(this.cmbAssistant);
+            this.panel6.Controls.Add(this.cmbOperator);
+            this.panel6.Controls.Add(this.lblAssistantDesc);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(347, 263);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(386, 53);
+            this.panel6.TabIndex = 1;
             // 
-            // lblMessage
+            // lblOperatorDesc
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(15, 17);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 13);
-            this.lblMessage.TabIndex = 2;
+            this.lblOperatorDesc.AutoSize = true;
+            this.lblOperatorDesc.Location = new System.Drawing.Point(18, 16);
+            this.lblOperatorDesc.Name = "lblOperatorDesc";
+            this.lblOperatorDesc.Size = new System.Drawing.Size(55, 13);
+            this.lblOperatorDesc.TabIndex = 2;
+            this.lblOperatorDesc.Text = "负责人：";
+            // 
+            // cmbAssistant
+            // 
+            this.cmbAssistant.FormattingEnabled = true;
+            this.cmbAssistant.Location = new System.Drawing.Point(255, 13);
+            this.cmbAssistant.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.cmbAssistant.Name = "cmbAssistant";
+            this.cmbAssistant.Size = new System.Drawing.Size(121, 21);
+            this.cmbAssistant.TabIndex = 1;
+            // 
+            // cmbOperator
+            // 
+            this.cmbOperator.FormattingEnabled = true;
+            this.cmbOperator.Location = new System.Drawing.Point(79, 13);
+            this.cmbOperator.Name = "cmbOperator";
+            this.cmbOperator.Size = new System.Drawing.Size(121, 21);
+            this.cmbOperator.TabIndex = 1;
+            // 
+            // lblAssistantDesc
+            // 
+            this.lblAssistantDesc.AutoSize = true;
+            this.lblAssistantDesc.Location = new System.Drawing.Point(206, 16);
+            this.lblAssistantDesc.Name = "lblAssistantDesc";
+            this.lblAssistantDesc.Size = new System.Drawing.Size(43, 13);
+            this.lblAssistantDesc.TabIndex = 2;
+            this.lblAssistantDesc.Text = "助理：";
+            // 
+            // lblOrderMessage
+            // 
+            this.lblOrderMessage.AutoSize = true;
+            this.lblOrderMessage.ForeColor = System.Drawing.Color.Fuchsia;
+            this.lblOrderMessage.Location = new System.Drawing.Point(37, 287);
+            this.lblOrderMessage.Name = "lblOrderMessage";
+            this.lblOrderMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblOrderMessage.TabIndex = 0;
+            // 
+            // groupBoxOrder
+            // 
+            this.groupBoxOrder.Controls.Add(this.gridOrderList);
+            this.groupBoxOrder.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxOrder.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxOrder.Name = "groupBoxOrder";
+            this.groupBoxOrder.Size = new System.Drawing.Size(733, 263);
+            this.groupBoxOrder.TabIndex = 0;
+            this.groupBoxOrder.TabStop = false;
+            this.groupBoxOrder.Text = "订单列表";
+            // 
+            // gridOrderList
+            // 
+            this.gridOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridOrderList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridOrderList.Location = new System.Drawing.Point(3, 16);
+            this.gridOrderList.Name = "gridOrderList";
+            this.gridOrderList.Size = new System.Drawing.Size(727, 244);
+            this.gridOrderList.TabIndex = 0;
             // 
             // FormNewOrder
             // 
@@ -325,6 +350,8 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.groupBoxOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderList)).EndInit();
             this.ResumeLayout(false);
@@ -353,9 +380,11 @@
         private System.Windows.Forms.ComboBox cmbOperator;
         private System.Windows.Forms.Label lblOrderMessage;
         private System.Windows.Forms.DataGridView gridOrderList;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteOrderDetail;
+        private System.Windows.Forms.Button btnModifyOrderDetail;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
     }
 }
