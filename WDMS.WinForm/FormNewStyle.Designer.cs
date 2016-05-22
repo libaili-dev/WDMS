@@ -36,11 +36,12 @@
             this.lblStyleNo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEditStyle = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnCreateStyle = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.btnEditStyle = new System.Windows.Forms.Button();
+            this.comboBoxStyleStatus = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBoxStyleStatus);
             this.panel1.Controls.Add(this.txtDescription);
             this.panel1.Controls.Add(this.lblDescription);
             this.panel1.Controls.Add(this.lblStatus);
@@ -124,6 +126,17 @@
             this.panel4.Size = new System.Drawing.Size(260, 36);
             this.panel4.TabIndex = 1;
             // 
+            // btnEditStyle
+            // 
+            this.btnEditStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditStyle.Location = new System.Drawing.Point(28, 6);
+            this.btnEditStyle.Name = "btnEditStyle";
+            this.btnEditStyle.Size = new System.Drawing.Size(69, 23);
+            this.btnEditStyle.TabIndex = 2;
+            this.btnEditStyle.Text = "更新";
+            this.btnEditStyle.UseVisualStyleBackColor = true;
+            this.btnEditStyle.Click += new System.EventHandler(this.btnEditStyle_Click);
+            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -164,16 +177,13 @@
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 0;
             // 
-            // btnEditStyle
+            // comboBoxStyleStatus
             // 
-            this.btnEditStyle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditStyle.Location = new System.Drawing.Point(28, 6);
-            this.btnEditStyle.Name = "btnEditStyle";
-            this.btnEditStyle.Size = new System.Drawing.Size(69, 23);
-            this.btnEditStyle.TabIndex = 2;
-            this.btnEditStyle.Text = "更新";
-            this.btnEditStyle.UseVisualStyleBackColor = true;
-            this.btnEditStyle.Click += new System.EventHandler(this.btnEditStyle_Click);
+            this.comboBoxStyleStatus.FormattingEnabled = true;
+            this.comboBoxStyleStatus.Location = new System.Drawing.Point(122, 96);
+            this.comboBoxStyleStatus.Name = "comboBoxStyleStatus";
+            this.comboBoxStyleStatus.Size = new System.Drawing.Size(166, 21);
+            this.comboBoxStyleStatus.TabIndex = 5;
             // 
             // FormNewStyle
             // 
@@ -209,5 +219,6 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnEditStyle;
+        private System.Windows.Forms.ComboBox comboBoxStyleStatus;
     }
 }

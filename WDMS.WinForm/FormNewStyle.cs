@@ -26,6 +26,14 @@ namespace WDMS.WinForm
             InitializeComponent();
             this.btnEditStyle.Visible = true;
             this.btnCreateStyle.Visible = false;
+            List<ComboxItem> lstComboxItem = new List<ComboxItem>();
+            ComboxItem cItemAvailable = new ComboxItem("Available", "Available");
+            ComboxItem cItemUnavailabel = new ComboxItem("Unavailable", "Unavailable");
+            lstComboxItem.Add(cItemAvailable);
+            lstComboxItem.Add(cItemUnavailabel);
+            this.comboBoxStyleStatus.DataSource = lstComboxItem;
+            this.comboBoxStyleStatus.DisplayMember = "Name";
+            this.comboBoxStyleStatus.ValueMember = "Value";
             using (var context = new WDMSEntities())
             {
                 var model = context.Styles.Find(styleId);
@@ -33,9 +41,11 @@ namespace WDMS.WinForm
                 {
                     this.txtStyleNo.Text = model.StyleNo;
                     this.txtDescription.Text = model.Description;
+                    this.comboBoxStyleStatus.SelectedValue = model.Status.Trim();
                     _styleId = model.StyleId;
                 }
             }
+            this.comboBoxStyleStatus.Refresh();
 
         }
 
@@ -84,7 +94,7 @@ namespace WDMS.WinForm
         {
             Styles style = new Styles();
             style.StyleNo = this.txtStyleNo.Text.Trim();
-            style.Status = "";
+            style.Status = this.comboBoxStyleStatus.SelectedValue.ToString();
             style.Description = this.txtDescription.Text.Trim();
             return style;
         }
@@ -102,6 +112,7 @@ namespace WDMS.WinForm
             {
                 var dbStyle = context.Styles.Find(_styleId);
                 dbStyle.StyleNo = style.StyleNo;
+                dbStyle.Status = style.Status;
                 dbStyle.Description = style.Description;
                 dbStyle.Images = style.Images;
 

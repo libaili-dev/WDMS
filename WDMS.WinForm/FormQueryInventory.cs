@@ -31,7 +31,6 @@ namespace WDMS.WinForm
             this.gridInventory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.gridInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.btnCreateNewInventory.Visible = false;
-            this.btnDeleteInventory.Visible = false;
         }
 
         public FormQueryInventory(string styleNo)
@@ -51,7 +50,6 @@ namespace WDMS.WinForm
             {
                 this.btnCreateNewInventory.Visible = false;
                 this.btnModifyInventory.Visible = false;
-                this.btnDeleteInventory.Visible = false;
             }
         }
 
@@ -74,7 +72,6 @@ namespace WDMS.WinForm
                         this.lblMessage.Text = "该款式不存在，请先创建款式！";
                         this.btnCreateNewInventory.Visible = false;
                         this.btnModifyInventory.Visible = false;
-                        this.btnDeleteInventory.Visible = false;
                         return;
                     }
                     else
@@ -111,7 +108,6 @@ namespace WDMS.WinForm
                 {
                     this.gridInventory.DataSource = invList;
                     this.btnCreateNewInventory.Visible = true;
-                    this.btnDeleteInventory.Visible = true;
                     this.btnModifyInventory.Visible = true;
                 }
                 else

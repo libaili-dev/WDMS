@@ -110,7 +110,7 @@
             // 
             // btnModifyStyle
             // 
-            this.btnModifyStyle.Location = new System.Drawing.Point(548, 5);
+            this.btnModifyStyle.Location = new System.Drawing.Point(548, 4);
             this.btnModifyStyle.Name = "btnModifyStyle";
             this.btnModifyStyle.Size = new System.Drawing.Size(75, 23);
             this.btnModifyStyle.TabIndex = 2;
