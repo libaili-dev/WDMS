@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
@@ -15,6 +16,8 @@ namespace WDMS.WinForm
 {
     public partial class MainForm : Form
     {
+        int deliverBufferDays = int.Parse(ConfigurationManager.AppSettings["DeliverBufferDays"].ToString());
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,7 +29,8 @@ namespace WDMS.WinForm
             this.gridToDelivery.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.gridToDelivery.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-
+            this.btnDelivery.Visible = false;
+            this.lblToDeliveryDesc.Text = string.Format("{0}日内待发件", deliverBufferDays.ToString());
             InitGridToDelivery();
         }
 
@@ -40,7 +44,7 @@ namespace WDMS.WinForm
         private void queryCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQueryCustomer frm = new FormQueryCustomer();
-            frm.StartPosition = FormStartPosition.CenterParent; 
+            frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
         }
 
@@ -98,11 +102,10 @@ namespace WDMS.WinForm
 
         private void InitGridToDelivery()
         {
-            int scheduleDays = 7;
             using (var context = new WDMSEntities())
             {
                 var orderList = (from order in context.Orders
-                                 where DbFunctions.DiffDays(DateTime.Today, order.Customer.WeddingDate) < scheduleDays
+                                 where DbFunctions.DiffDays(DateTime.Today, order.Customer.WeddingDate) < deliverBufferDays
                                  select new
                                  {
                                      order.OrderBatchId,
@@ -116,13 +119,56 @@ namespace WDMS.WinForm
                                  }).ToList();
                 this.gridToDelivery.DataSource = orderList;
             }
+            SetDeliveryButtionStatus();
+
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            if(this.gridToDelivery.RowCount>0)
+            if (this.gridToDelivery.RowCount > 0)
             {
+                int orderBatchId = int.Parse(this.gridToDelivery.CurrentRow.Cells["OrderBatchId"].Value.ToString());
+                string orderStatus = this.gridToDelivery.CurrentRow.Cells["Status"].Value.ToString();
+                if (orderStatus.ToUpper().Equals("NEW"))
+                {
+                    using (var context = new WDMSEntities())
+                    {
+                        var order = context.Orders.Find(orderBatchId);
+                        order.UpdateTime = DateTime.Now;
+                        order.Status = "Delivered";
+                        context.SaveChanges();
+                        this.lblToDeliveryDesc.Text = string.Format("订单批号：{0} 已发件", orderBatchId.ToString());
+                    }
+                    SetDeliveryButtionStatus();
 
+                }
+            }
+        }
+
+        private void gridToDelivery_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SetDeliveryButtionStatus();
+        }
+
+        private void SetDeliveryButtionStatus()
+        {
+            if (this.gridToDelivery.RowCount > 0)
+            {
+                int curRowIndex = 0;
+                if (this.gridToDelivery.CurrentRow != null)
+                {
+                    curRowIndex = this.gridToDelivery.CurrentRow.Index;
+                }
+
+                string orderStatus = this.gridToDelivery.Rows[curRowIndex].Cells["Status"].Value.ToString();
+                if (orderStatus.ToUpper().Equals("NEW"))
+                {
+                    this.btnDelivery.Visible = true;
+                }
+                else
+                {
+                    this.btnDelivery.Visible = false;
+                }
             }
         }
     }

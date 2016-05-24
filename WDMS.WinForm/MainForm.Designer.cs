@@ -45,6 +45,7 @@
             this.queryInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sysconfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ParamConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tabCtrlToDelivery = new System.Windows.Forms.TabControl();
@@ -53,7 +54,6 @@
             this.lblToDeliveryDesc = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ParamConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -200,9 +200,16 @@
             // adminConfigToolStripMenuItem
             // 
             this.adminConfigToolStripMenuItem.Name = "adminConfigToolStripMenuItem";
-            this.adminConfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.adminConfigToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.adminConfigToolStripMenuItem.Text = "管理员";
             this.adminConfigToolStripMenuItem.Click += new System.EventHandler(this.adminConfigToolStripMenuItem_Click);
+            // 
+            // ParamConfigToolStripMenuItem
+            // 
+            this.ParamConfigToolStripMenuItem.Name = "ParamConfigToolStripMenuItem";
+            this.ParamConfigToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.ParamConfigToolStripMenuItem.Text = "参数设置";
+            this.ParamConfigToolStripMenuItem.Click += new System.EventHandler(this.ParamConfigToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -258,6 +265,7 @@
             this.gridToDelivery.RowTemplate.Height = 23;
             this.gridToDelivery.Size = new System.Drawing.Size(776, 459);
             this.gridToDelivery.TabIndex = 1;
+            this.gridToDelivery.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridToDelivery_CellClick);
             // 
             // lblToDeliveryDesc
             // 
@@ -287,13 +295,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "待收回";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // ParamConfigToolStripMenuItem
-            // 
-            this.ParamConfigToolStripMenuItem.Name = "ParamConfigToolStripMenuItem";
-            this.ParamConfigToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ParamConfigToolStripMenuItem.Text = "参数设置";
-            this.ParamConfigToolStripMenuItem.Click += new System.EventHandler(this.ParamConfigToolStripMenuItem_Click);
             // 
             // btnRefresh
             // 
