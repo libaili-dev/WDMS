@@ -185,6 +185,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Orders_Assistant">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Assistant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Orders_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -194,6 +206,18 @@
             </Principal>
             <Dependent Role="Orders">
               <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Operator">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Operator" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -228,8 +252,16 @@
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_Orders_Assistant" Association="Self.FK_Orders_Assistant">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
           <AssociationSet Name="FK_Orders_Customer" Association="Self.FK_Orders_Customer">
             <End Role="Customer" EntitySet="Customer" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Operator" Association="Self.FK_Orders_Operator">
+            <End Role="Admin" EntitySet="Admin" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
         </EntityContainer>
@@ -246,6 +278,8 @@
           <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AdminRole" Relationship="Self.FK_Admin_AdminRole" FromRole="Admin" ToRole="AdminRole" />
+          <NavigationProperty Name="Orders" Relationship="WDMS.EF.FK_Orders_Admin" FromRole="Admin" ToRole="Orders" />
+          <NavigationProperty Name="Orders1" Relationship="WDMS.EF.FK_Orders_Admin1" FromRole="Admin" ToRole="Orders" />
         </EntityType>
         <EntityType Name="AdminRole">
           <Key>
@@ -346,6 +380,8 @@
           <Property Name="UpdateTime" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customer" FromRole="Orders" ToRole="Customer" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_OrderDetails_Orders" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="Admin" Relationship="WDMS.EF.FK_Orders_Admin" FromRole="Orders" ToRole="Admin" />
+          <NavigationProperty Name="Admin1" Relationship="WDMS.EF.FK_Orders_Admin1" FromRole="Orders" ToRole="Admin" />
         </EntityType>
         <EntityType Name="Styles">
           <Key>
@@ -466,6 +502,14 @@
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="WDMS.EF.sysdiagrams" />
+          <AssociationSet Name="FK_Orders_Admin" Association="WDMS.EF.FK_Orders_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Admin1" Association="WDMS.EF.FK_Orders_Admin1">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -477,6 +521,30 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_Orders_Admin">
+          <End Type="WDMS.EF.Admin" Role="Admin" Multiplicity="1" />
+          <End Type="WDMS.EF.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Admin1">
+          <End Type="WDMS.EF.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="WDMS.EF.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Assistant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

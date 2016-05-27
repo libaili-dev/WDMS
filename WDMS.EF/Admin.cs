@@ -14,11 +14,22 @@ namespace WDMS.EF
     
     public partial class Admin
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Admin()
+        {
+            this.Orders = new HashSet<Orders>();
+            this.Orders1 = new HashSet<Orders>();
+        }
+    
         public int AdminId { get; set; }
         public int AdminRoldId { get; set; }
         public string AdminName { get; set; }
         public string Password { get; set; }
     
         public virtual AdminRole AdminRole { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders1 { get; set; }
     }
 }

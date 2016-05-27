@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e00944a5be204ccc9db4909795b90c27" Name="Diagram1">
-        <EntityTypeShape EntityType="WDMS.EF.Admin" Width="1.5" PointX="10" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WDMS.EF.AdminRole" Width="1.5" PointX="7.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WDMS.EF.Admin" Width="1.5" PointX="10.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WDMS.EF.AdminRole" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WDMS.EF.Configurations" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="WDMS.EF.Customer" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="WDMS.EF.CustomerType" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="WDMS.EF.Inventory" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WDMS.EF.OrderDetails" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WDMS.EF.OrderDetails" Width="1.5" PointX="8.625" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="WDMS.EF.Orders" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="WDMS.EF.Styles" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
         <AssociationConnector Association="WDMS.EF.FK_Admin_AdminRole" ManuallyRouted="false" />
@@ -21,6 +21,8 @@
         <AssociationConnector Association="WDMS.EF.FK_OrderDetails_Inventory" ManuallyRouted="false" />
         <AssociationConnector Association="WDMS.EF.FK_OrderDetails_Orders" ManuallyRouted="false" />
         <EntityTypeShape EntityType="WDMS.EF.sysdiagrams" Width="1.5" PointX="0.75" PointY="9.75" />
+        <AssociationConnector Association="WDMS.EF.FK_Orders_Admin" />
+        <AssociationConnector Association="WDMS.EF.FK_Orders_Admin1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

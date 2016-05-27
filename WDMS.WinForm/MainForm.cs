@@ -113,8 +113,8 @@ namespace WDMS.WinForm
                                      order.Customer.CustomerName,
                                      order.Customer.Mobile,
                                      order.Customer.WeddingDate,
-                                     order.Operator,
-                                     order.Assistant
+                                     Operator = order.Admin.AdminName,
+                                     Assistant = order.Admin1.AdminName
 
                                  }).ToList();
                 this.gridToDelivery.DataSource = orderList;
